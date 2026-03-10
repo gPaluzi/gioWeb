@@ -9,42 +9,61 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg m-2">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse column-gap-3 me-3 position-absolute end-0" id="navbarNav">
-                    <a class="nav-link active" href="#">Home</a>
-                    <a class="nav-link" href="#">About</a>
-                    <a class="nav-link" href="#">Portfolio</a>
-                    <a class="nav-link" href="#">Gallery</a>
-                    <a class="nav-link" href="#">Contact</a>
+                <div class="collapse navbar-collapse column-gap-3 me-3 position-absolute start-50 translate-middle-x" id="navbarNav">
+                    <a class="nav-link active" href="#home">Home</a>
+                    <a class="nav-link" href="#about">About</a>
+                    <a class="nav-link" href="#portfolio">Portfolio</a>
+                    <a class="nav-link" href="#gallery">Gallery</a>
+                    <a class="nav-link" href="#contact">Contact</a>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container-fluid even">
-        <h1>Hi!</h1>
-        <p>Welcome to Gio personal web</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-    <div class="container-fluid odd">
-        <h2>About</h2>
-    </div>
-    <div class="container-fluid even">
-        <h2>Portfolio</h2>
-    </div>
-        <div class="container-fluid odd">
-        <h2>Gallery</h2>
-    </div>
-    <div class="container-fluid odd">
-        <h2>Contact</h2>
-        <address>
-            <a href="tel:6282210369181">082210369181</a><br>
-            <a href="mailto:giovannipaluzi@gmail.com">giovannipaluzi@gmail.com</a>
-        </address>
-    </div>
+    <main class="gap-0">
+        <div class="container-fluid even pt-5 pb-5" id="home">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1>Hi!</h1>
+                    <p>Welcome to my personal web</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid odd pt-5 pb-5" id="about">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-7">
+                    <h2 class="text-center">About</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid even pt-5 pb-5" id="portfolio">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-7">
+                    <h2 class="text-center">Portfolio</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid odd pt-5 pb-5" id="gallery">
+            <h2 class="text-center">Gallery</h2>
+        </div>
+        <div class="container-fluid even pt-5 pb-5" id="contact">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-7 text-center">
+                    <h2>Contact</h2>
+                    <address>
+                        <a href="tel:6282210369181">082210369181</a><br>
+                        <a href="mailto:giovannipaluzi@gmail.com">giovannipaluzi@gmail.com</a>
+                    </address>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
