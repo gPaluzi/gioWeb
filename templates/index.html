@@ -3,35 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portofolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Personal Website</title>
 </head>
 <body>
     <header>
-        <h1>Personal Portofolio</h1>
-        <nav>
-            <ul>
-                <li><a href="#profile">Profile</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse column-gap-3 me-3 position-absolute end-0" id="navbarNav">
+                    <a class="nav-link active" href="#">Home</a>
+                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="#">Portfolio</a>
+                    <a class="nav-link" href="#">Gallery</a>
+                    <a class="nav-link" href="#">Contact</a>
+                </div>
+            </div>
         </nav>
     </header>
-    <main>
-        <section id="profile">
-            <h2>Profile</h2>
-        </section>
-        <section id="projects">
-            <h2>Projects</h2>
-        </section>
-    </main>
-    <footer>
-        <div id="contact">
-            <h2>Contact</h2>
-            <address>
-                <a href="tel:6282210369181">082210369181</a><br>
-                <a href="mailto:giovannipaluzi@gmail.com">giovannipaluzi@gmail.com</a>
-            </address>
-        </div>
-    </footer>
+    <div class="container-fluid even">
+        <h1>Hi!</h1>
+        <p>Welcome to Gio personal web</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div class="container-fluid odd">
+        <h2>About</h2>
+    </div>
+    <div class="container-fluid even">
+        <h2>Portfolio</h2>
+    </div>
+        <div class="container-fluid odd">
+        <h2>Gallery</h2>
+    </div>
+    <div class="container-fluid odd">
+        <h2>Contact</h2>
+        <address>
+            <a href="tel:6282210369181">082210369181</a><br>
+            <a href="mailto:giovannipaluzi@gmail.com">giovannipaluzi@gmail.com</a>
+        </address>
+    </div>
 </body>
 </html>
