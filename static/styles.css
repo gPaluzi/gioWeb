@@ -1,18 +1,6 @@
-body {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: #393E46;
-    color: #282b2893;
+:root{
+    --bs-primary: yellow;
+    --bs-dark: #afafaf;
+    --bs-body-secondary: #c11;
 }
 
-.container {
-    width: 100%;
-    max-height: fit-content;
-}
-
-.even {
-    background-color: #ce7878;
-}
-
-.odd {
-    background-color: #DFD0B8;
-}
