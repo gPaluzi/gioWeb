@@ -1,4 +1,41 @@
 {% extends 'layout.html' %}
 {% block title %}About Me{% endblock %}
-{% block content%}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-9">
+            <div data-bs-spy="scroll" data-bs-target="#toc" data-bs-smooth="true">
+                <!-- Give the hook -->
+                <!-- Use the summary that connect conservation and tech -->
+                <!-- Education and career -->
+                <!-- Skills -->
+                <!-- Personal and Hobbies -->
+                <div>
+                    <h1>About me</h1>
+                </div>
+                <div id="career">
+                    <h2>Career and Education</h2>
+                </div>
+                <div id="skills">
+                    <h2>Skills</h2>
+                </div>
+                <div id="personal">
+                    <h2>Personal</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <nav id="toc" class="h-100 flex-column align-items-stretch border-end pe-4">
+                <div class="position-sticky top-0 pt-3">
+                    <h6>On this Page</h6>
+                    <nav class="nav flex-column nav-pills">
+                        <a href="#career" class="nav-link">Career and Education</a>
+                        <a href="" class="nav-link">Skills</a>
+                        <a href="" class="nav-link">Personal</a>
+                    </nav>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
 {% endblock%}
