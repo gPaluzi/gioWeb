@@ -1,4 +1,88 @@
 {% extends 'layout.html' %}
 {% block title %}About Me{% endblock %}
-{% block content%}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-9">
+            <div>
+                <div>
+                    <h1>{{ about.opening.title }}</h1>
+                    {% for p in about.opening.paragraph %}
+                    <p> {{ p }}</p>
+                    {% endfor %}
+                </div>
+                <div id="experience">
+                    <h2>Experience</h2>
+                    <p>{{ about.experience.intro }}</p>
+                    <div id="career">
+                        <h3>Career</h3>
+                        {% for p in about.experience.career %}
+                        <p> {{ p }}</p>
+                        {% endfor %}
+                    </div>
+                    <div id="education">
+                        <h3>Education</h3>
+                        {% for p in about.experience.education %}
+                        <p> {{ p }}</p>
+                        {% endfor %}                    </div>
+                    <div id="certification">
+                        <h3>Certifications</h3>
+                        {% for p in about.experience.certification %}
+                        <p> {{ p }}</p>
+                        {% endfor %}    
+                    </div>
+                    <div id="volunteer">
+                        <h3>Volunteer</h3>
+                        {% for p in about.experience.volunteer %}
+                        <p> {{ p }}</p>
+                        {% endfor %}
+                    </div>
+                    <div id="oth-exp">
+                        <h3>Others</h3>
+                        {% for p in about.experience.other %}
+                        <p> {{ p }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div id="skills">
+                    <h2>Skills</h2>
+                    <p>{{ about.skills.intro }}</p>
+                    {% for category in about.skills.categories %}
+                    <h3>{{category.name}}</h3>
+                    <ul>
+                        {% for skill in category.tools %}
+                        <li>{{ skill }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endfor %}
+                    <h2>Personal</h2>
+                    <p>{{ about.personal.intro }}</p>
+                    {% for hobby in about.personal.hobbies %}
+                    <h3>{{ hobby.name }}</h3>
+                    <ul>
+                        {% for desc in hobby %}
+                        <li>{{desc}}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <nav id="toc" class="h-100 flex-column align-items-stretch ps-4 border-start">
+                <div class="position-sticky top-0 pt-3">
+                    <h6>On this Page</h6>
+                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="#career" class="nav-link ms-3 my-1">Career</a>
+                    <a href="#education" class="nav-link ms-3 my-1">Education</a>
+                    <a href="#certification" class="nav-link ms-3 my-1">Certification</a>
+                    <a href="#volunteer" class="nav-link ms-3 my-1">Volunteer</a>
+                    <a href="#oth-exp" class="nav-link ms-3 my-1">Other experience</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#personal" class="nav-link">Personal</a>
+                </div>
+            </nav>          
+        </div>
+    </div>
+</div>
 {% endblock%}
