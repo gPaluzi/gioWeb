@@ -6,60 +6,29 @@
             "Having spent years in conservation sector, I saw a recurring need for better automation and user-friendly tools for field researchers. This led me to pivot from a traditional forestry path into the world of software development, specializing in Python and geospatial data. I am driven by the process of continuous improvement and technical refinement, whether i am optimizing a data pipeline or building a custom web application."
         ]
     },
-    "sections":[
-        {"experience":[
-            {"intro":""},
-            {"subsection":[
-                {"career":[
-                    {"cr_title":[]},
-                    {"cr_place":[]},
-                    {"cr_period":[]},
-                    {"cr_desc":[]}
-                ]},
-                {"education":[
-                    {"ed_title":[]},
-                    {"ed_place":[]},
-                    {"ed_period":[]},
-                    {"ed_desc":[]}
-                ]},
-                {"certification":[
-                    {"cr_title":[]},
-                    {"cr_place":[]},
-                    {"cr_period":[]},
-                    {"cr_desc":[]}
-                ]},
-                {"volunteer":[
-                    {"vt_title":[]},
-                    {"vt_place":[]},
-                    {"vt_period":[]},
-                    {"vt_desc":[]}
-                ]},
-                {"other":[
-                    {"ot_title":[]},
-                    {"ot_place":[]},
-                    {"ot_period":[]},
-                    {"ot_desc":[]}
-                ]}
-            ]}
-        ]},
-        {"skills":[
-            {"intro":""},
-            {"subsection":[]}
-        ]},
-        {"personal":[
-            {"intro":""},
-            {"subsection":[]}
-        ]}
-    ],
-    "experience":{
+    "experience": {
         "intro": "Brief documentation about my journey.",
         "career": [
-            "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos",
-            "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos"
+            {
+                "title": "GIS Officer",
+                "place": "SINTAS Indonesia",
+                "period": "2023 - Present",
+                "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit."
+            },
+            {
+                "title": "Biodiversity Surveyor",
+                "place": "Mangrove Jakarta",
+                "period": "Dec 2022 - Jan 2023",
+                "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit."
+            }
         ],
         "education": [
-            "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos",
-            "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos"
+            {
+                "title": "IPB University",
+                "place": "Indonesia",
+                "period": "2019 - 2025",
+                "description":"Lorem ipsum dolor sit amet consectetur adipiscing elit."
+            }
         ],
         "certification": [
             "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos",

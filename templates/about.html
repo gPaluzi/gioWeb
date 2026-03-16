@@ -18,51 +18,41 @@
                         <!-- Create timeline -->
                         <h3 class="display-6 fs-4 fw-medium">Career</h3>
                         <div class="timeline fw-light">
+                            {% for job in about.experience.career %}
                             <div class="timeline-item card shadow">
                                 <div class="card-body">
-                                    <h3 class="card-title fs-4 fw-medium mb-1">Title</h3>
-                                    <p class="text-body-secondary fs-6 mb-0">Place</p>
-                                    <p class="text-body-secondary small mb-0">Period</p>
+                                    <h3 class="card-title fs-4 fw-medium mb-1">
+                                        {{ job.title }}
+                                    </h3>
+                                    <p class="text-body-secondary fs-6 mb-0">
+                                        {{ job.place }}
+                                    </p>
+                                    <p class="text-body-secondary small mb-0">
+                                        {{ job.period }}
+                                    </p>
                                     <div class="accordion accordion-flush" id="accordionExample">
                                         <div class="accordion-item border-0">
                                             <p class="accordion-header">
-                                                <button class="accordion-button collapsed px-0 py-0 fs-6 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                                <button class="accordion-button collapsed px-0 py-0 fs-6 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ loop.index }}">
                                                     <p class="text-body-secondary fs-6 mb-0">
                                                         Description
                                                     </p>
                                                 </button>
                                             </p>
-                                            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                            <div id="collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                                 <div class="accordion-body px-0 pt-2 pb-0 small">
-                                                    <strong>This is the first item’s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                                    {{job.description}}
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="timeline-item card shadow">
-                                <div class="card-body">
-                                    <h2 class="card-title">title</h2>
-                                    <p class="card-subtitle">description</p>
-                                </div>
-                            </div>
-                            <div class="timeline-item card shadow">
-                                <div class="card-body">
-                                    <h2 class="card-title">title</h2>
-                                    <p class="card-subtitle">description</p>
-                                </div>
-                            </div>
+                            {% endfor %}
                         </div>
 
 
                         <!-- Paragraph layout -->
-                        <div id="career">
-                            <h3>Career</h3>
-                            {% for p in about.experience.career %}
-                            <p> {{ p }}</p>
-                            {% endfor %}
-                        </div>
                         <div id="education">
                             <h3>Education</h3>
                             {% for p in about.experience.education %}
