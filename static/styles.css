@@ -23,7 +23,7 @@
 .timeline-item::before{
     content: '';
     position: absolute;
-    top: 35%;
+    top: 50%;
     left: -1.8rem;
     width: 8px;
     height: 8px;
