@@ -2,7 +2,7 @@
     "opening": {
         "title": "Overview",
         "paragraph": [
-            "a GIS Specialist and Junior Developer with 3 years work experience, dedicated to building technical bridges between environmental conservation and software development",
+            "a GIS Specialist and Junior Developer with 3 years work experience, dedicated to building technical bridges between environmental conservation and software development.",
             "Having spent years in conservation sector, I saw a recurring need for better automation and user-friendly tools for field researchers. This led me to pivot from a traditional forestry path into the world of software development, specializing in Python and geospatial data. I am driven by the process of continuous improvement and technical refinement, whether i am optimizing a data pipeline or building a custom web application."
         ]
     },
@@ -30,7 +30,7 @@
         ]
     },
     "skills": {
-        "intro": "Tools that i used to face environmental problems",
+        "intro": "Tools that i used to face environmental problems.",
         "categories": [
             {
                 "name": "GIS",
@@ -53,7 +53,7 @@
         ]
     },
     "personal": {
-        "intro": "The person behind, a life outside the terminal",
+        "intro": "The person behind, a life outside the terminal.",
         "hobbies": [
             {
                 "name": "running",
