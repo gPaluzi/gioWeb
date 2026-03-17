@@ -44,5 +44,5 @@
 .accordion-button:focus {
     z-index: 3;
     outline: 0;
-    box-shadow: rgba(17, 17, 26, 0.1) -1px 1px 8px !important;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 8px !important;
 }

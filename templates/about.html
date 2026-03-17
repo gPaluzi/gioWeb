@@ -3,105 +3,236 @@
 {% block content %}
 <div class="container-fluid ms-3 p-3">
     <div class="row">
+
+        <!-- Content -->
         <div class="col-9">
-            <div>
-                <div>
-                    <h1 class="display-4 fs-1 fw-medium">{{ about.opening.title }}</h1>
-                    {% for p in about.opening.paragraph %}
-                    <p class="lead fs-6"> {{ p }}</p>
-                    {% endfor %}
-                </div>
-                <div id="experience">
-                    <h2 class="display-6 fs-2 fw-medium">Experience</h2>
-                    <p  class="small fw-light">{{ about.experience.intro }}</p>
-                    <div class="container-fluid ps-6">
-                        <!-- Create timeline -->
-                        <h3 class="display-6 fs-4 fw-medium">Career</h3>
-                        <div class="timeline fw-light">
-                            {% for job in about.experience.career %}
-                            <div class="timeline-item card shadow">
-                                <div class="card-body">
-                                    <h3 class="card-title fs-4 fw-medium mb-1">
-                                        {{ job.title }}
-                                    </h3>
-                                    <p class="fs-6 mb-0">
-                                        {{ job.place }}
-                                    </p>
-                                    <p class="small mb-0">
-                                        {{ job.period }}
-                                    </p>
-                                    <div class="accordion accordion-flush" id="accordionExample">
-                                        <div class="accordion-item border-0">
-                                            <p class="accordion-header">
-                                                <button class="accordion-button collapsed px-0 py-0 fs-6 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ loop.index }}">
-                                                    <p class="small mb-0">
-                                                        Description
-                                                    </p>
-                                                </button>
-                                            </p>
-                                            <div id="collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                                <div class="accordion-body px-0 pt-2 pb-0 small">
-                                                    {{job.description}}
-                                                </div>
+
+            <!-- Opening paragraph -->
+            <div class="container-fluid">
+                <h1 class="display-4 fs-1 fw-medium">{{ about.opening.title }}</h1>
+                {% for p in about.opening.paragraph %}
+                <p class="lead fs-6"> {{ p }}</p>
+                {% endfor %}
+            </div>
+
+            <!-- Content sections -->
+
+            <!-- Experience section -->
+            <div class="container-fluid">
+                <h2 class="display-6 fs-2 fw-medium" id="experience">Experience</h2>
+                <p  class="small fw-light">{{ about.experience.intro }}</p>
+
+                <!-- Career subsection -->
+                <div class="container-fluid ps-6">
+                    <h3 class="display-6 fs-4 fw-medium" id="career">Career</h3>
+                    <div class="timeline fw-light">
+                        {% for job in about.experience.career %}
+                        <div class="timeline-item card shadow w-75">
+                            <div class="card-body">
+                                <h3 class="card-title fs-5 fw-medium mb-3">
+                                    {{ job.title }}
+                                </h3>
+                                <h4 class="card-subtitle small mb-2 fw-normal text-body-secondary">
+                                    {{ job.place }}
+                                </h4>
+                                <h5 class="card-title small mb-2 fw-normal text-body-secondary">
+                                    {{ job.period }}
+                                </h5>
+                                <div class="accordion accordion-flush" id="accordionExample">
+                                    <div class="accordion-item border-0">
+                                        <p class="accordion-header">
+                                            <button class="accordion-button collapsed px-0 py-0 fs-6 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ loop.index }}">
+                                                <p class="small mb-0">
+                                                    Description
+                                                </p>
+                                            </button>
+                                        </p>
+                                        <div id="collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body px-0 pt-2 pb-0 small">
+                                                {{job.description}}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            {% endfor %}
                         </div>
+                        {% endfor %}
+                    </div>
+                    
+                    <!-- Education subsection -->
+                    <h3 class="display-6 fs-4 fw-medium" id="education">Education</h3>
+                    <div class="timeline fw-light">
+                        {% for job in about.experience.education %}
+                        <div class="timeline-item card shadow w-75">
+                            <div class="card-body">
+                                <h3 class="card-title fs-5 fw-medium mb-3">
+                                    {{ job.place }}
+                                </h3>
+                                <h4 class="card-subtitle small mb-2 fw-normal text-body-secondary">
+                                    {{ job.major }}
+                                </h4>
+                                <h5 class="card-subtitle small mb-2 fw-normal text-body-secondary">
+                                    {{ job.time}}
+                                </h5>
+                                <div class="accordion accordion-flush" id="accordionExample">
+                                    <div class="accordion-item border-0">
+                                        <p class="accordion-header">
+                                            <button class="accordion-button collapsed px-0 py-0 fs-6 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ loop.index }}">
+                                                <p class="small mb-0">
+                                                    Description
+                                                </p>
+                                            </button>
+                                        </p>
+                                        <div id="collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body px-0 pt-2 pb-0 small">
+                                                {{job.description}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
 
+                    <!-- Certification subection -->
+                    <h3 class="display-6 fs-4 fw-medium" id="certification">Certification</h3>
+                    <div class="timeline fw-light">
+                        {% for job in about.experience.certification %}
+                        <div class="timeline-item card shadow w-75">
+                            <div class="card-body">
+                                <h3 class="card-title fs-5 fw-medium mb-3">
+                                    {{ job.title }}
+                                </h3>
+                                <h4 class="card-subtitle small mb-2 fw-normal text-body-secondary">
+                                    {{ job.publisher }}
+                                </h4>
+                                <h5 class="card-subtitle small mb-2 fw-normal text-body-secondary">
+                                    {{ job.time }}
+                                </h5>
+                                <div class="accordion accordion-flush" id="accordionExample">
+                                    <div class="accordion-item border-0">
+                                        <p class="accordion-header">
+                                            <button class="accordion-button collapsed px-0 py-0 fs-6 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ loop.index }}">
+                                                <p class="small mb-0">
+                                                    Description
+                                                </p>
+                                            </button>
+                                        </p>
+                                        <div id="collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body px-0 pt-2 pb-0 small">
+                                                {{job.description}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
 
-                        <!-- Paragraph layout -->
-                        <div id="education">
-                            <h3>Education</h3>
-                            {% for p in about.experience.education %}
-                            <p> {{ p }}</p>
-                            {% endfor %}                    </div>
-                        <div id="certification">
-                            <h3>Certifications</h3>
-                            {% for p in about.experience.certification %}
-                            <p> {{ p }}</p>
-                            {% endfor %}    
+                    <!-- Volunteer subsection -->
+                    <h3 class="display-6 fs-4 fw-medium" id="volunteer">Volunteer</h3>
+                    <div class="timeline fw-light">
+                        {% for job in about.experience.volunteer %}
+                        <div class="timeline-item card shadow w-75">
+                            <div class="card-body">
+                                <h3 class="card-title fs-5 mb-3 fw-medium">
+                                    {{ job.activity }}
+                                </h3>
+                                <h4 class="card-subtitle small mb-2 fw-normal text-body-secondary">
+                                    {{ job.place }}
+                                </h4>
+                                <h5 class="card-subtitle small mb-2 fw-normal text-body-secondary">
+                                    {{ job.time }}
+                                </h5>
+                                <div class="accordion accordion-flush" id="accordionExample">
+                                    <div class="accordion-item border-0">
+                                        <p class="accordion-header">
+                                            <button class="accordion-button collapsed px-0 py-0 fs-6 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ loop.index }}">
+                                                <p class="small mb-0">
+                                                    Description
+                                                </p>
+                                            </button>
+                                        </p>
+                                        <div id="collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body px-0 pt-2 pb-0 small">
+                                                {{job.description}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div id="volunteer">
-                            <h3>Volunteer</h3>
-                            {% for p in about.experience.volunteer %}
-                            <p> {{ p }}</p>
-                            {% endfor %}
+                        {% endfor %}
+                    </div>
+
+                    <!-- Other experience subsection -->
+                    <h3 class="display-6 fs-4 fw-medium" id="oth-exp">Other</h3>
+                    <div class="timeline fw-light">
+                        {% for job in about.experience.other %}
+                        <div class="timeline-item card shadow w-75">
+                            <div class="card-body">
+                                <h3 class="card-title fs-5 mb-3 fw-medium">
+                                    {{ job.activity }}
+                                </h3>
+                                <h4 class="card-subtitle small mb-2 fw-normal text-body-secondary">
+                                    {{ job.explain }}
+                                </h4>
+                                <h5 class="card-subtitle small mb-2 fw-normal text-body-secondary">
+                                    {{ job.time }}
+                                </h5>
+                                <div class="accordion accordion-flush" id="accordionExample">
+                                    <div class="accordion-item border-0">
+                                        <p class="accordion-header">
+                                            <button class="accordion-button collapsed px-0 py-0 fs-6 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ loop.index }}">
+                                                <p class="small mb-0">
+                                                    Description
+                                                </p>
+                                            </button>
+                                        </p>
+                                        <div id="collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body px-0 pt-2 pb-0 small">
+                                                {{job.description}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div id="oth-exp">
-                            <h3>Others</h3>
-                            {% for p in about.experience.other %}
-                            <p> {{ p }}</p>
-                            {% endfor %}
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
-                <div id="skills">
-                    <h2>Skills</h2>
-                    <p  class="small">{{ about.skills.intro }}</p>
-                    {% for category in about.skills.categories %}
-                    <h3>{{category.name}}</h3>
-                    <ul>
-                        {% for skill in category.tools %}
-                        <li>{{ skill }}</li>
-                        {% endfor %}
-                    </ul>
-                    {% endfor %}
-                    <h2>Personal</h2>
-                    <p class="small">{{ about.personal.intro }}</p>
-                    {% for hobby in about.personal.hobbies %}
-                    <h3>{{ hobby.name }}</h3>
-                    <ul>
-                        {% for desc in hobby %}
-                        <li>{{desc}}</li>
-                        {% endfor %}
-                    </ul>
-                    {% endfor %}
-                </div>
             </div>
+
+            <!-- Skills section -->
+            <div id="skills">
+                <h2>Skills</h2>
+                <p  class="small">{{ about.skills.intro }}</p>
+                {% for category in about.skills.categories %}
+                <h3>{{category.name}}</h3>
+                <ul>
+                    {% for skill in category.tools %}
+                    <li>{{ skill }}</li>
+                    {% endfor %}
+                </ul>
+                {% endfor %}
+                <h2>Personal</h2>
+                <p class="small">{{ about.personal.intro }}</p>
+                {% for hobby in about.personal.hobbies %}
+                <h3>{{ hobby.name }}</h3>
+                <ul>
+                    {% for desc in hobby %}
+                    <li>{{desc}}</li>
+                    {% endfor %}
+                </ul>
+                {% endfor %}
+            </div>
+
+
         </div>
+
+        <!-- Table of content -->
         <div class="col-3">
             <nav id="toc" class="h-100 flex-column align-items-stretch ps-4 border-start">
                 <div class="position-sticky top-0 pt-3 small fw-light">
