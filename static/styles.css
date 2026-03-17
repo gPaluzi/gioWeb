@@ -32,3 +32,17 @@
     border: 2px solid black;
     box-shadow: 0 0 0 2px white;
 }
+
+.accordion-button:not(collapsed) {
+    background-color: white !important;
+}
+
+.accordion-button:active, .accordion-button:visited, .accordion-button:link {
+    background-color: white !important;
+}
+
+.accordion-button:focus {
+    z-index: 3;
+    outline: 0;
+    box-shadow: rgba(17, 17, 26, 0.1) -1px 1px 8px !important;
+}
