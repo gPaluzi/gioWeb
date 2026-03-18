@@ -8,25 +8,24 @@
         <div class="col-9 ps-3">
 
             <!-- Opening paragraph -->
-            <div class="container-fluid">
+            <div class="container-fluid py-2">
                 <h1 class="display-1 fw-normal">{{ about.opening.title }}</h1>
                 {% for p in about.opening.paragraph %}
                 <p class="lead fs-3"> {{ p }}</p>
                 {% endfor %}
             </div>
 
-            <!-- Content sections -->
             <!-- Experience section -->
-            <div class="container-fluid">
+            <div class="container-fluid py-2">
                 <h2 class="display-3 fw-normal" id="experience">Experience</h2>
                 <p  class="lead fs-3">{{ about.experience.intro }}</p>
+                <div class="container-fluid ps-3">
 
-                <!-- Career subsection -->
-                <div class="container-fluid ps-6">
+                    <!-- Career subsection -->
                     <h3 class="display-6 fw-normal" id="career">Career</h3>
-                    <div class="timeline fw-light">
+                    <div class="timeline fw-light py-3 my-1">
                         {% for job in about.experience.career %}
-                        <div class="timeline-item card shadow w-75">
+                        <div class="timeline-item card shadow-sm w-75">
                             <div class="card-body">
                                 <h4 class="card-title fs-3 fw-medium mb-2">
                                     {{ job.title }}
@@ -58,9 +57,9 @@
                     
                     <!-- Education subsection -->
                     <h3 class="display-6 fw-normal" id="education">Education</h3>
-                    <div class="timeline fw-light">
+                    <div class="timeline fw-light py-3 my-1">
                         {% for job in about.experience.education %}
-                        <div class="timeline-item card shadow w-75">
+                        <div class="timeline-item card shadow-sm w-75">
                             <div class="card-body">
                                 <h4 class="card-title fs-3 fw-medium mb-2">
                                     {{ job.place }}
@@ -92,9 +91,9 @@
 
                     <!-- Certification subection -->
                     <h3 class="display-6 fw-normal" id="certification">Certification</h3>
-                    <div class="timeline fw-light">
+                    <div class="timeline fw-light py-3 my-1">
                         {% for job in about.experience.certification %}
-                        <div class="timeline-item card shadow w-75">
+                        <div class="timeline-item card shadow-sm w-75">
                             <div class="card-body">
                                 <h4 class="card-title fs-3 fw-medium mb-2">
                                     {{ job.title }}
@@ -126,9 +125,9 @@
 
                     <!-- Volunteer subsection -->
                     <h3 class="display-6 fw-normal" id="volunteer">Volunteer</h3>
-                    <div class="timeline fw-light">
+                    <div class="timeline fw-light py-3 my-1">
                         {% for job in about.experience.volunteer %}
-                        <div class="timeline-item card shadow w-75">
+                        <div class="timeline-item card shadow-sm w-75">
                             <div class="card-body">
                                 <h4 class="card-title fs-3 fw-medium mb-2">
                                     {{ job.activity }}
@@ -160,9 +159,9 @@
 
                     <!-- Other experience subsection -->
                     <h3 class="display-6 fw-normal" id="oth-exp">Other</h3>
-                    <div class="timeline fw-light">
+                    <div class="timeline fw-light py-3 my-1">
                         {% for job in about.experience.other %}
-                        <div class="timeline-item card shadow w-75">
+                        <div class="timeline-item card shadow-sm w-75">
                             <div class="card-body">
                                 <h4 class="card-title fs-3 fw-medium mb-2">
                                     {{ job.activity }}
@@ -195,22 +194,131 @@
             </div>
 
             <!-- Skills section -->
-            <div id="skills">
-                <h2>Skills</h2>
-                <p  class="small">{{ about.skills.intro }}</p>
-                {% for category in about.skills.categories %}
-                <h3>{{category.name}}</h3>
-                <div class="card">
-                    <div></div>
+            <div class="container-fluid px-4 py-5">
+                <h2 class="display-3 fw-normal my" id="skills">Skills</h2>
+                <p  class="lead fs-3 pd-2 border-bottom">{{ about.skills.intro }}</p>
+                <div class="container-fluid">
+
+                    <!-- Programming subsection -->
+                    <div class="card shadow">
+                        <div class="card-header">
+                            <h3 class="display-6 fw-normal">Programming</h3>
+                        </div>
+                        <div class="card-body row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+                            <div class="col d-flex align-items-start">
+                                <svg
+                                    class="bi text-body-secondary flex-shrink-0 me-3"
+                                    width="1.75em"
+                                    height="1.75em"
+                                    aria-hidden="true"
+                                    >
+                                    <use xlink:href="#bootstrap"></use>
+                                </svg>
+                                <div>
+                                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                                        Featured title
+                                    </h3>
+                                    <p>
+                                        Paragraph of text beneath the heading to explain the heading.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col d-flex align-items-start">
+                                <svg
+                                    class="bi text-body-secondary flex-shrink-0 me-3"
+                                    width="1.75em"
+                                    height="1.75em"
+                                    aria-hidden="true"
+                                    >
+                                    <use xlink:href="#bootstrap"></use>
+                                </svg>
+                                <div>
+                                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                                        Featured title
+                                    </h3>
+                                    <p>
+                                        Paragraph of text beneath the heading to explain the heading.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col d-flex align-items-start">
+                                <svg
+                                    class="bi text-body-secondary flex-shrink-0 me-3"
+                                    width="1.75em"
+                                    height="1.75em"
+                                    aria-hidden="true"
+                                    >
+                                    <use xlink:href="#bootstrap"></use>
+                                </svg>
+                                <div>
+                                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                                        Featured title
+                                    </h3>
+                                    <p>
+                                        Paragraph of text beneath the heading to explain the heading.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col d-flex align-items-start">
+                                <svg
+                                    class="bi text-body-secondary flex-shrink-0 me-3"
+                                    width="1.75em"
+                                    height="1.75em"
+                                    aria-hidden="true"
+                                    >
+                                    <use xlink:href="#bootstrap"></use>
+                                </svg>
+                                <div>
+                                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                                        Featured title
+                                    </h3>
+                                    <p>
+                                        Paragraph of text beneath the heading to explain the heading.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col d-flex align-items-start">
+                                <svg
+                                    class="bi text-body-secondary flex-shrink-0 me-3"
+                                    width="1.75em"
+                                    height="1.75em"
+                                    aria-hidden="true"
+                                    >
+                                    <use xlink:href="#bootstrap"></use>
+                                </svg>
+                                <div>
+                                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                                        Featured title
+                                    </h3>
+                                    <p>
+                                        Paragraph of text beneath the heading to explain the heading.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col d-flex align-items-start">
+                                <svg
+                                    class="bi text-body-secondary flex-shrink-0 me-3"
+                                    width="1.75em"
+                                    height="1.75em"
+                                    aria-hidden="true"
+                                    >
+                                    <use xlink:href="#bootstrap"></use>
+                                </svg>
+                                <div>
+                                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                                        Featured title
+                                    </h3>
+                                    <p>
+                                        Paragraph of text beneath the heading to explain the heading.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <ul>
-                    {% for skill in category.tools %}
-                    <li>{{ skill }}</li>
-                    {% endfor %}
-                </ul>
-                {% endfor %}
             </div>
 
+            <!-- Personal -->
             <div>
                 <h2>Personal</h2>
                 <p class="small">{{ about.personal.intro }}</p>

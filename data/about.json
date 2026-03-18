@@ -76,6 +76,18 @@
     },
     "skills": {
         "intro": "Tools that i used to face environmental problems.",
+        "gis":{
+            "name":"ArcGIS Pro",
+            "level":"advance",
+            "summary" :"",
+            "description":""
+        },
+        "coding":{
+            "name":"",
+            "level":"",
+            "summary":"",
+            "description":""
+        },
         "categories": [
             {
                 "name": "GIS",
