@@ -9,7 +9,7 @@
 
             <!-- Opening paragraph -->
             <div class="container-fluid py-2">
-                <h1 class="display-1 fw-normal">{{ about.opening.title }}</h1>
+                <h1 class="display-1 fw-normal" id="overview">{{ about.opening.title }}</h1>
                 {% for p in about.opening.paragraph %}
                 <p class="lead fs-3"> {{ p }}</p>
                 {% endfor %}
@@ -194,42 +194,13 @@
             </div>
 
             <!-- Skills section -->
-            <div class="container-fluid px-4 py-5">
+            <div class="container-fluid px-4 py-5" id="skills">
                 <h2 class="display-3 fw-normal" id="skills">Skills</h2>
                 <p  class="lead fs-3 pd-1 border-bottom">{{ about.skills.intro }}</p>
                 <div class="container-fluid">
 
-                    <!-- Programming subsection -->
-                    <div class="card shadow my-4">
-                        <div class="card-header">
-                            <h3 class="display-6 fw-normal">Programming</h3>
-                        </div>
-                        <div class="card-body row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-5 p-5">
-                            {% for skill in about.skills.programming %}
-                            <div class="col d-flex align-items-start gx-4">
-                                <div>
-                                    <div class="d-flex align-items-end justify-content-between">
-                                        <h4 class="display-5 fw-semibold mb-0 fs-3 text-body-emphasis">
-                                            {{ skill.name }}
-                                        </h4>
-                                        <span class="text-muted small">
-                                            {{ skill.level }}
-                                        </span>
-                                    </div>
-                                    <div class="progress my-2" style="height: 6px;">
-                                        <div class="progress-bar bg-secondary" style="width: {{ skill.confidence | int }}%;"></div>
-                                    </div>
-                                    <p>
-                                        {{ skill.summary }}
-                                    </p>
-                                </div>
-                            </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                    
                     <!-- GIS subsection -->
-                    <div class="card shadow my-4">
+                    <div class="card shadow my-4" id="gis">
                         <div class="card-header">
                             <h3 class="display-6 fw-normal">GIS</h3>
                         </div>
@@ -257,16 +228,44 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Programming subsection -->
+                <div class="card shadow my-4" id="programming">
+                    <div class="card-header">
+                        <h3 class="display-6 fw-normal">Programming</h3>
+                    </div>
+                    <div class="card-body row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-5 p-5">
+                        {% for skill in about.skills.programming %}
+                        <div class="col d-flex align-items-start gx-4">
+                            <div>
+                                <div class="d-flex align-items-end justify-content-between">
+                                    <h4 class="display-5 fw-semibold mb-0 fs-3 text-body-emphasis">
+                                        {{ skill.name }}
+                                    </h4>
+                                    <span class="text-muted small">
+                                        {{ skill.level }}
+                                    </span>
+                                </div>
+                                <div class="progress my-2" style="height: 6px;">
+                                    <div class="progress-bar bg-secondary" style="width: {{ skill.confidence | int }}%;"></div>
+                                </div>
+                                <p>
+                                    {{ skill.summary }}
+                                </p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
-
-
         </div>
 
         <!-- Table of content -->
         <div class="col-3">
-            <nav id="toc" class="h-100 flex-column align-items-stretch ps-4 border-start">
-                <div class="position-sticky top-0 pt-3 small fw-light">
-                    <h6>On this Page</h6>
+            <nav id="toc" class="h-100 flex-column align-items-stretch ps-4 border-start d-none d-md-block">
+                <div class="position-sticky top-0 pt-3 fs-5 fw-light">
+                    <h6 class="fs-4">On this Page</h6>
+                    <a href="#overview" class="nav-link">Overview</a>
                     <a href="#experience" class="nav-link">Experience</a>
                     <a href="#career" class="nav-link ms-3 my-1">Career</a>
                     <a href="#education" class="nav-link ms-3 my-1">Education</a>
@@ -274,6 +273,8 @@
                     <a href="#volunteer" class="nav-link ms-3 my-1">Volunteer</a>
                     <a href="#oth-exp" class="nav-link ms-3 my-1">Other experience</a>
                     <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#gis" class="nav-link ms-3 my-1">GIS</a>
+                    <a href="#programming" class="nav-link ms-3 my-1">Programming</a>
                 </div>
             </nav>          
         </div>
