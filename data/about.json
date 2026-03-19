@@ -76,57 +76,80 @@
     },
     "skills": {
         "intro": "Tools that i used to face environmental problems.",
-        "gis":{
+        "gis":[
+            {
             "name":"ArcGIS Pro",
-            "level":"advance",
-            "summary" :"",
-            "description":""
-        },
-        "coding":{
-            "name":"",
-            "level":"",
-            "summary":"",
-            "description":""
-        },
-        "categories": [
-            {
-                "name": "GIS",
-                "tools": [
-                    "ArcGIS Pro",
-                    "ArcGIS",
-                    "Google Earth Engine",
-                    "Terrset"
-                ]
+            "level":"Advance",
+            "confidence": 89,
+            "summary" :"Lorem ipsum dolor sit amet consectetur adipiscing elit."
             },
             {
-                "name": "Programming",
-                "tools": [
-                    "Python",
-                    "R",
-                    "SQL",
-                    "HTML, CSS, Javacript"
-                ]
+            "name":"ArcGIS Pro",
+            "level":"Advance",
+            "confidence": 89,
+            "summary" :"Lorem ipsum dolor sit amet consectetur adipiscing elit."
+            },
+            {
+            "name":"ArcGIS Pro",
+            "level":"Advance",
+            "confidence": 89,
+            "summary" :"Lorem ipsum dolor sit amet consectetur adipiscing elit."
+            },
+            {
+            "name":"ArcGIS Pro",
+            "level":"Advance",
+            "confidence": 89,
+            "summary" :"Lorem ipsum dolor sit amet consectetur adipiscing elit."
+            },
+            {
+            "name":"ArcGIS Pro",
+            "level":"Advance",
+            "confidence": 89,
+            "summary" :"Lorem ipsum dolor sit amet consectetur adipiscing elit."
+            },
+            {
+            "name":"ArcGIS Pro",
+            "level":"Advance",
+            "confidence": 89,
+            "summary" :"Lorem ipsum dolor sit amet consectetur adipiscing elit."
             }
-        ]
-    },
-    "personal": {
-        "intro": "The person behind, a life outside the terminal.",
-        "hobbies": [
+        ],
+        "programming":[
             {
-                "name": "running",
-                "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit."
+                "name":"Python",
+                "level":"Intermediate",
+                "confidence": 87,
+                "summary":"Lorem ipsum dolor sit amet consectetur adipiscing elit."
             },
             {
-                "name": "cycling",
-                "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit."
+                "name":"R",
+                "level":"Intermediate",
+                "confidence": 70,
+                "summary":"Lorem ipsum dolor sit amet consectetur adipiscing elit."
             },
             {
-                "name": "chess",
-                "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit."
+                "name":"SQL",
+                "level":"Beginner",
+                "confidence": 50,
+                "summary":"Lorem ipsum dolor sit amet consectetur adipiscing elit."
+            },            
+            {
+                "name":"HTML, CSS, Javascript",
+                "level":"Beginner",
+                "confidence": 70,
+                "summary":"Lorem ipsum dolor sit amet consectetur adipiscing elit."
             },
             {
-                "name": "keyboard",
-                "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit."
+                "name":"Python ",
+                "level":"Intermediate",
+                "confidence": 87,
+                "summary":"Lorem ipsum dolor sit amet consectetur adipiscing elit."
+            },
+            {
+                "name":"Python ",
+                "level":"Intermediate",
+                "confidence": 87,
+                "summary":"Lorem ipsum dolor sit amet consectetur adipiscing elit."
             }
         ]
     }

@@ -195,141 +195,68 @@
 
             <!-- Skills section -->
             <div class="container-fluid px-4 py-5">
-                <h2 class="display-3 fw-normal my" id="skills">Skills</h2>
-                <p  class="lead fs-3 pd-2 border-bottom">{{ about.skills.intro }}</p>
+                <h2 class="display-3 fw-normal" id="skills">Skills</h2>
+                <p  class="lead fs-3 pd-1 border-bottom">{{ about.skills.intro }}</p>
                 <div class="container-fluid">
 
                     <!-- Programming subsection -->
-                    <div class="card shadow">
+                    <div class="card shadow my-4">
                         <div class="card-header">
                             <h3 class="display-6 fw-normal">Programming</h3>
                         </div>
-                        <div class="card-body row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
-                            <div class="col d-flex align-items-start">
-                                <svg
-                                    class="bi text-body-secondary flex-shrink-0 me-3"
-                                    width="1.75em"
-                                    height="1.75em"
-                                    aria-hidden="true"
-                                    >
-                                    <use xlink:href="#bootstrap"></use>
-                                </svg>
+                        <div class="card-body row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-5 p-5">
+                            {% for skill in about.skills.programming %}
+                            <div class="col d-flex align-items-start gx-4">
                                 <div>
-                                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
-                                        Featured title
-                                    </h3>
+                                    <div class="d-flex align-items-end justify-content-between">
+                                        <h4 class="display-5 fw-semibold mb-0 fs-3 text-body-emphasis">
+                                            {{ skill.name }}
+                                        </h4>
+                                        <span class="text-muted small">
+                                            {{ skill.level }}
+                                        </span>
+                                    </div>
+                                    <div class="progress my-2" style="height: 6px;">
+                                        <div class="progress-bar bg-secondary" style="width: {{ skill.confidence | int }}%;"></div>
+                                    </div>
                                     <p>
-                                        Paragraph of text beneath the heading to explain the heading.
+                                        {{ skill.summary }}
                                     </p>
                                 </div>
                             </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    
+                    <!-- GIS subsection -->
+                    <div class="card shadow my-4">
+                        <div class="card-header">
+                            <h3 class="display-6 fw-normal">GIS</h3>
+                        </div>
+                        <div class="card-body row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-5 p-5">
+                            {% for skill in about.skills.gis %}
                             <div class="col d-flex align-items-start">
-                                <svg
-                                    class="bi text-body-secondary flex-shrink-0 me-3"
-                                    width="1.75em"
-                                    height="1.75em"
-                                    aria-hidden="true"
-                                    >
-                                    <use xlink:href="#bootstrap"></use>
-                                </svg>
                                 <div>
-                                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
-                                        Featured title
-                                    </h3>
+                                    <div class="d-flex align-items-end justify-content-between">
+                                        <h4 class="display-5 fw-semibold mb-0 fs-3 text-body-emphasis">
+                                            {{ skill.name }}
+                                        </h4>
+                                        <span class="text-muted small">
+                                            {{ skill.level }}
+                                        </span>
+                                    </div>
+                                    <div class="progress my-2" style="height: 6px;">
+                                        <div class="progress-bar bg-secondary" style="width: {{ skill.confidence | int }}%;"></div>
+                                    </div>
                                     <p>
-                                        Paragraph of text beneath the heading to explain the heading.
+                                        {{ skill.summary }}
                                     </p>
                                 </div>
                             </div>
-                            <div class="col d-flex align-items-start">
-                                <svg
-                                    class="bi text-body-secondary flex-shrink-0 me-3"
-                                    width="1.75em"
-                                    height="1.75em"
-                                    aria-hidden="true"
-                                    >
-                                    <use xlink:href="#bootstrap"></use>
-                                </svg>
-                                <div>
-                                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
-                                        Featured title
-                                    </h3>
-                                    <p>
-                                        Paragraph of text beneath the heading to explain the heading.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <svg
-                                    class="bi text-body-secondary flex-shrink-0 me-3"
-                                    width="1.75em"
-                                    height="1.75em"
-                                    aria-hidden="true"
-                                    >
-                                    <use xlink:href="#bootstrap"></use>
-                                </svg>
-                                <div>
-                                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
-                                        Featured title
-                                    </h3>
-                                    <p>
-                                        Paragraph of text beneath the heading to explain the heading.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <svg
-                                    class="bi text-body-secondary flex-shrink-0 me-3"
-                                    width="1.75em"
-                                    height="1.75em"
-                                    aria-hidden="true"
-                                    >
-                                    <use xlink:href="#bootstrap"></use>
-                                </svg>
-                                <div>
-                                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
-                                        Featured title
-                                    </h3>
-                                    <p>
-                                        Paragraph of text beneath the heading to explain the heading.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <svg
-                                    class="bi text-body-secondary flex-shrink-0 me-3"
-                                    width="1.75em"
-                                    height="1.75em"
-                                    aria-hidden="true"
-                                    >
-                                    <use xlink:href="#bootstrap"></use>
-                                </svg>
-                                <div>
-                                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
-                                        Featured title
-                                    </h3>
-                                    <p>
-                                        Paragraph of text beneath the heading to explain the heading.
-                                    </p>
-                                </div>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Personal -->
-            <div>
-                <h2>Personal</h2>
-                <p class="small">{{ about.personal.intro }}</p>
-                {% for hobby in about.personal.hobbies %}
-                <h3>{{ hobby.name }}</h3>
-                <ul>
-                    {% for desc in hobby %}
-                    <li>{{desc}}</li>
-                    {% endfor %}
-                </ul>
-                {% endfor %}
             </div>
 
 
@@ -347,7 +274,6 @@
                     <a href="#volunteer" class="nav-link ms-3 my-1">Volunteer</a>
                     <a href="#oth-exp" class="nav-link ms-3 my-1">Other experience</a>
                     <a href="#skills" class="nav-link">Skills</a>
-                    <a href="#personal" class="nav-link">Personal</a>
                 </div>
             </nav>          
         </div>
