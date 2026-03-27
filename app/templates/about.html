@@ -1,0 +1,285 @@
+{% extends 'layout.html' %}
+{% block title %}About Me{% endblock %}
+{% block content %}
+<div class="container-fluid ms-3 p-3">
+    <div class="row">
+
+        <!-- Content -->
+        <div class="col-9 ps-3">
+
+            <!-- Opening paragraph -->
+            <div class="container-fluid py-2">
+                <h1 class="display-1 fw-normal" id="overview">{{ about.opening.title }}</h1>
+                {% for p in about.opening.paragraph %}
+                <p class="lead fs-3"> {{ p }}</p>
+                {% endfor %}
+            </div>
+
+            <!-- Experience section -->
+            <div class="container-fluid py-2">
+                <h2 class="display-3 fw-normal" id="experience">Experience</h2>
+                <p  class="lead fs-3">{{ about.experience.intro }}</p>
+                <div class="container-fluid ps-3">
+
+                    <!-- Career subsection -->
+                    <h3 class="display-6 fw-normal" id="career">Career</h3>
+                    <div class="timeline fw-light py-3 my-1">
+                        {% for job in about.experience.career %}
+                        <div class="timeline-item card shadow-sm w-75">
+                            <div class="card-body">
+                                <h4 class="card-title fs-3 fw-medium mb-2">
+                                    {{ job.title }}
+                                </h4>
+                                <p class="card-subtitle fs-5 mb-0 fw-normal text-body-secondary">
+                                    {{ job.place }}
+                                </p>
+                                <p class="card-title fs-5 mb-2 fw-normal text-body-secondary">
+                                    {{ job.period }}
+                                </p>
+                                <div class="accordion accordion-flush" id="car-accordion{{ loop.index }}">
+                                    <div class="accordion-item border-0">
+                                        <p class="accordion-header">
+                                            <button class="accordion-button collapsed px-0 py-0 fs-5 mb-0 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#car-collapse{{ loop.index }}">
+                                                Description
+                                            </button>
+                                        </p>
+                                        <div id="car-collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#car-accordion{{ loop.index }}">
+                                            <div class="accordion-body px-0 pt-2 pb-0 fs-5">
+                                                {{job.description}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    
+                    <!-- Education subsection -->
+                    <h3 class="display-6 fw-normal" id="education">Education</h3>
+                    <div class="timeline fw-light py-3 my-1">
+                        {% for job in about.experience.education %}
+                        <div class="timeline-item card shadow-sm w-75">
+                            <div class="card-body">
+                                <h4 class="card-title fs-3 fw-medium mb-2">
+                                    {{ job.place }}
+                                </h4>
+                                <p class="card-subtitle fs-5 mb-0 fw-normal text-body-secondary">
+                                    {{ job.major }}
+                                </p>
+                                <p class="card-subtitle fs-5 mb-2 fw-normal text-body-secondary">
+                                    {{ job.time}}
+                                </p>
+                                <div class="accordion accordion-flush" id="edu-accordion{{ loop.index }}">
+                                    <div class="accordion-item border-0">
+                                        <p class="accordion-header">
+                                            <button class="accordion-button collapsed px-0 py-0 fs-5 mb-0 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#edu-collapse{{ loop.index }}">
+                                                Description
+                                            </button>
+                                        </p>
+                                        <div id="edu-collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#edu-accordion{{ loop.index }}">
+                                            <div class="accordion-body px-0 pt-2 pb-0 fs-5">
+                                                {{job.description}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <!-- Certification subection -->
+                    <h3 class="display-6 fw-normal" id="certification">Certification</h3>
+                    <div class="timeline fw-light py-3 my-1">
+                        {% for job in about.experience.certification %}
+                        <div class="timeline-item card shadow-sm w-75">
+                            <div class="card-body">
+                                <h4 class="card-title fs-3 fw-medium mb-2">
+                                    {{ job.title }}
+                                </h4>
+                                <p class="card-subtitle fs-5 mb-0 fw-normal text-body-secondary">
+                                    {{ job.publisher }}
+                                </p>
+                                <p class="card-subtitle fs-5 mb-2 fw-normal text-body-secondary">
+                                    {{ job.time }}
+                                </p>
+                                <div class="accordion accordion-flush" id="cer-accordion{{ loop.index }}">
+                                    <div class="accordion-item border-0">
+                                        <p class="accordion-header">
+                                            <button class="accordion-button collapsed px-0 py-0 fs-5 mb-0 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#cer-collapse{{ loop.index }}">
+                                                Description
+                                            </button>
+                                        </p>
+                                        <div id="cer-collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#cer-accordion{{ loop.index }}">
+                                            <div class="accordion-body px-0 pt-2 pb-0 fs-5">
+                                                {{job.description}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <!-- Volunteer subsection -->
+                    <h3 class="display-6 fw-normal" id="volunteer">Volunteer</h3>
+                    <div class="timeline fw-light py-3 my-1">
+                        {% for job in about.experience.volunteer %}
+                        <div class="timeline-item card shadow-sm w-75">
+                            <div class="card-body">
+                                <h4 class="card-title fs-3 fw-medium mb-2">
+                                    {{ job.activity }}
+                                </h4>
+                                <p class="card-subtitle fs-5 mb-0 fw-normal text-body-secondary">
+                                    {{ job.place }}
+                                </p>
+                                <p class="card-subtitle fs-5 mb-2 fw-normal text-body-secondary">
+                                    {{ job.time }}
+                                </p>
+                                <div class="accordion accordion-flush" id="vol-accordion{{ loop.index }}">
+                                    <div class="accordion-item border-0">
+                                        <p class="accordion-header">
+                                            <button class="accordion-button collapsed px-0 py-0 fs-5 mb-0 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#vol-collapse{{ loop.index }}">
+                                                Description
+                                            </button>
+                                        </p>
+                                        <div id="vol-collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#vol-accordion{{ loop.index }}">
+                                            <div class="accordion-body px-0 pt-2 pb-0 fs-5">
+                                                {{job.description}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <!-- Other experience subsection -->
+                    <h3 class="display-6 fw-normal" id="oth-exp">Other</h3>
+                    <div class="timeline fw-light py-3 my-1">
+                        {% for job in about.experience.other %}
+                        <div class="timeline-item card shadow-sm w-75">
+                            <div class="card-body">
+                                <h4 class="card-title fs-3 fw-medium mb-2">
+                                    {{ job.activity }}
+                                </h4>
+                                <p class="card-subtitle fs-5 mb-0 fw-normal text-body-secondary">
+                                    {{ job.explain }}
+                                </p>
+                                <p class="card-subtitle fs-5 mb-2 fw-normal text-body-secondary">
+                                    {{ job.time }}
+                                </p>
+                                <div class="accordion accordion-flush" id="oth-accordion{{ loop.index }}">
+                                    <div class="accordion-item border-0">
+                                        <p class="accordion-header">
+                                            <button class="accordion-button collapsed px-0 py-0 fs-5 mb-0 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#oth-collapse{{ loop.index }}">
+                                                Description
+                                            </button>
+                                        </p>
+                                        <div id="oth-collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#oth-accordion{{ loop.index }}">
+                                            <div class="accordion-body px-0 pt-2 pb-0 fs-5">
+                                                {{job.description}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills section -->
+            <div class="container-fluid px-4 py-5" id="skills">
+                <h2 class="display-3 fw-normal" id="skills">Skills</h2>
+                <p  class="lead fs-3 pd-1 border-bottom">{{ about.skills.intro }}</p>
+
+                <!-- GIS subsection -->
+                <div class="container-fluid mb-5">
+                    <div class="card shadow my-4" id="gis">
+                        <div class="card-header">
+                            <h3 class="display-6 fw-normal">GIS</h3>
+                        </div>
+                        <div class="card-body row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-5 p-5">
+                            {% for skill in about.skills.gis %}
+                            <div class="col d-flex align-items-start">
+                                <div>
+                                    <div class="d-flex align-items-end justify-content-between">
+                                        <h4 class="display-5 fw-semibold mb-0 fs-3 text-body-emphasis">
+                                            {{ skill.name }}
+                                        </h4>
+                                        <span class="text-muted small">
+                                            {{ skill.level }}
+                                        </span>
+                                    </div>
+                                    <div class="progress my-2" style="height: 6px;">
+                                        <div class="progress-bar bg-secondary" style="width: {{ skill.confidence | int }}%;"></div>
+                                    </div>
+                                    <p>
+                                        {{ skill.summary }}
+                                    </p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Programming subsection -->
+                <div class="container-fluid">
+                    <div class="card shadow my-4" id="programming">
+                        <div class="card-header">
+                            <h3 class="display-6 fw-normal">Programming</h3>
+                        </div>
+                        <div class="card-body row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-5 p-5">
+                            {% for skill in about.skills.programming %}
+                            <div class="col d-flex align-items-start gx-4">
+                                <div>
+                                    <div class="d-flex align-items-end justify-content-between">
+                                        <h4 class="display-5 fw-semibold mb-0 fs-3 text-body-emphasis">
+                                            {{ skill.name }}
+                                        </h4>
+                                        <span class="text-muted small">
+                                            {{ skill.level }}
+                                        </span>
+                                    </div>
+                                    <div class="progress my-2" style="height: 6px;">
+                                        <div class="progress-bar bg-secondary" style="width: {{ skill.confidence | int }}%;"></div>
+                                    </div>
+                                    <p>
+                                        {{ skill.summary }}
+                                    </p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Table of content -->
+        <div class="col-3">
+            <nav id="toc" class="h-100 flex-column align-items-stretch ps-4 border-start d-none d-md-block">
+                <div class="position-sticky top-0 pt-3 fs-5 fw-light">
+                    <h6 class="fs-4">On this Page</h6>
+                    <a href="#overview" class="nav-link">Overview</a>
+                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="#career" class="nav-link ms-3 my-1">Career</a>
+                    <a href="#education" class="nav-link ms-3 my-1">Education</a>
+                    <a href="#certification" class="nav-link ms-3 my-1">Certification</a>
+                    <a href="#volunteer" class="nav-link ms-3 my-1">Volunteer</a>
+                    <a href="#oth-exp" class="nav-link ms-3 my-1">Other experience</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#gis" class="nav-link ms-3 my-1">GIS</a>
+                    <a href="#programming" class="nav-link ms-3 my-1">Programming</a>
+                </div>
+            </nav>          
+        </div>
+    </div>
+</div>
+{% endblock%}
