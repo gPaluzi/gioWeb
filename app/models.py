@@ -1,5 +1,6 @@
 from datetime import date, datetime
-from sqlalchemy import Column, Integer, String, Date
+from sqlalchemy import Column, Integer, String, Date, ForeignKey
+from sqlalchemy.orm import relationship
 from database import Base
 
 class Experience(Base):
@@ -13,7 +14,7 @@ class Experience(Base):
         'other'
     )
 
-    experience_id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True)
     name  = Column(String, nullable=False)
     category = Column(String, nullable=False)
     organization = Column(String)
@@ -43,9 +44,9 @@ class Experience(Base):
 
     @classmethod
     def validate_category(cls, category: str)-> str:
-        if category.lower() not in cls.VALID_CATEGORY:
+        if category.strip().lower() not in cls.VALID_CATEGORY:
             raise ValueError(f'The category "{category}" is not valid')
-        return category.lower()
+        return category.strip().lower()
 
 
     @classmethod
@@ -64,28 +65,57 @@ class Experience(Base):
     def __repr__(self):
         start = self.start_date.strftime('%d %m %Y')
         end = self.end_date.strftime('%d %m %Y') if self.end_date else 'Present'
-        return f'Experienced {self.name} from {start} to {end}'
+        return f'<Experienced {self.name} from {start} to {end}>'
 
-class Skills(Base):
+class SkillCategory(Base):
+    __tablename__ = 'skill_category'
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String, unique=True, nullable=False)
+
+    skills = relationship('Skill', backref='category', lazy=True)
+
+    def __init__(self, name: str):
+        self.name = name
+
+    def __repr__(self):
+        return f'<Skill category: {self.name}>'
+
+class Skill(Base):
     __tablename__ = 'skills'
 
-    skills_id = Column(Integer, primary_key=True)
-    name = Column(String)
+    VALID_LEVEL: tuple[str, ...] = (
+        'beginner',
+        'intermediate',
+        'advanced'
+    )
 
-    def __init__():
-        pass
+    id = Column(Integer, primary_key=True)
+    category_id = Column(Integer, ForeignKey('skill_category.id'), nullable=False)
+    name = Column(String, nullable=False)
+    level = Column(String, nullable=False)
+    confidence = Column(Integer, nullable=False)
+    summary = Column(String)
 
-    def __repr__():
-        pass
 
-class Tools(Base):
-    __tablename__ = 'tools'
+    def __init__(self, name: str, level: str, confidence: int, summary: str, category):
+        self.name = name
+        self.level = self.validate_level(level)
+        self.confidence = self.validate_confidence(confidence)
+        self.summary = summary
+        self.category = category
 
-    tool_id = Column(Integer, primary_key=True)
-    skill_id = Column(Integer)
+    @classmethod
+    def validate_level(cls, level: str)-> str:
+        if level.strip().lower() not in cls.VALID_LEVEL:
+            raise ValueError(f'Invalid level, got {level}')
+        return level.strip().lower()
+    
+    @classmethod
+    def validate_confidence(cls, value:int)-> int:
+        if not 0 <= value <= 100:
+            raise ValueError(f'confidence value is out of range, got {value}')
+        return value
 
-    def __init__():
-        pass
-
-    def __repr__():
-        pass
+    def __repr__(self):
+        return f'<{self.name}> at {self.level} level'
