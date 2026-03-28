@@ -1,0 +1,25 @@
+{
+    "experience": [
+        {
+            "name": "",
+            "category": "",
+            "start_date": "",
+            "end_date": "",
+            "description": ""
+        }
+    ],
+    "skill_category": [
+        {
+            "name": ""
+        }
+    ],
+    "skill": [
+        {
+            "name": "",
+            "level": "",
+            "confidence": 0,
+            "summary": "",
+            "category": ""
+        }
+    ]
+}
