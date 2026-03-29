@@ -6,10 +6,10 @@ def seed():
     session = db_session
 
     # db reset
-    session.query(Skill).delete()
-    session.query(SkillCategory).delete()
-    session.query(Experience).delete()
-    session.commit()
+    # session.query(Skill).delete()
+    # session.query(SkillCategory).delete()
+    # session.query(Experience).delete()
+    # session.commit()
 
     with open('./app/data/data.json') as f:
         data = json.load(f)

@@ -1,25 +1,104 @@
 {
     "experience": [
         {
-            "name": "",
-            "category": "",
-            "start_date": "",
-            "end_date": "",
-            "description": ""
+            "name": "GIS Officer",
+            "category": "Career",
+            "organization": "Sintas Indonesia",
+            "start_date": "2023-01-01",
+            "end_date": null,
+            "description": "Managed the GIS workflow, providing spatial analysis and mapping support across the organization project rosters. I focused on stramlining data management processes and delivering technical geospatial solutions for wildlife conservation. This position required a deep integration of spatial data and environmental field realities."
+        },
+        {
+            "name": "Biodiversity Surveyor",
+            "category": "Career",
+            "organization": "Mangrove Jakarta",
+            "start_date": "2022-12-01",
+            "end_date": "2023-01-30",
+            "description": "Executed HCV Biodiversity surveys in mangrove habitats, targeting avian and herpeotfauna biodiversity. I performed technical assessment of ecosystem stability using Mangrove Health Index by remote sensing approach. This role translating field observations into environmental health report."
+        },
+        {
+            "name": "Foresty Major",
+            "category": "Education",
+            "organization": "IPB University",
+            "start_date": "2019-07-01",
+            "end_date": "2025-12-31",
+            "description": "Build theoretical and field-based foundation in forest resources conservation. I completed all core modules and focused on environmental conservation. This domain serves as the 'environmental foundation' layer for my current projects."
+        },
+        {
+            "name": "Scientific Computing with Python",
+            "category": "Certification",
+            "organization": "freeCodeCamp",
+            "start_date": "2024-05-01",
+            "end_date": null,
+            "description": "The 300-hours curriculum involved basic foundation in python and computer science serve as foundation to solve a problem in computer viewpoint. Solve a minimum five mini-project to achieve the certification. The certification represents a formal transition to data-driven development."
+        },
+                {
+            "name": "Legacy Resoponsive Web Design v8",
+            "category": "Certification",
+            "organization": "freeCodeCamp",
+            "start_date": "2025-05-01",
+            "end_date": null,
+            "description": "The 300-hours curriculum involved basic foundation of buuilding user-friendly, accessible web applications. Solve a minimum five mini-project to achieve the certification. This ensure my technical tools are not only functional but also intuitive to end-users."
+        },
+        {
+            "name": "BEAT Program fellow",
+            "category": "Volunteer",
+            "organization": "Cornell Lab of Ornithology",
+            "start_date": "2026-02-01",
+            "end_date": null,
+            "description": "Conducted research on javan leopard bioaccoustic and training in PAM monitoring. My participation emphasized the integration of spatial science with wildlife monitoring tools to solve conservation challanges"
         }
     ],
     "skill_category": [
         {
-            "name": ""
+            "name": "Programming"
+        },
+        {
+            "name": "GIS"
         }
     ],
     "skill": [
         {
-            "name": "",
-            "level": "",
-            "confidence": 0,
-            "summary": "",
-            "category": ""
+            "name": "Python",
+            "level": "Advanced",
+            "confidence": 87,
+            "summary": "Primary programming language used for development and geospatial automation.",
+            "category": "Programming"
+        },
+        {
+            "name": "SQL",
+            "level": "Beginner",
+            "confidence": 49,
+            "summary": "Solid understanding of relational database and fundamental logic of structured queries.",
+            "category": "Programming"
+        },
+        {
+            "name": "R",
+            "level": "Intermediate",
+            "confidence": 71,
+            "summary": "Leverage R for performing statistical computing and build research workflow.",
+            "category": "Programming"
+        },
+        {
+            "name": "HTML, CSS, JavaScript",
+            "level": "Intermediate",
+            "confidence": 65,
+            "summary": "Utilized as presentation layer for web-based applications.",
+            "category": "Programming"
+        },
+        {
+            "name": "ArcGis Pro",
+            "level": "Advanced",
+            "confidence": 83,
+            "summary": "Advanced workstation for executing complex geoprocessing workflow and cartographic production.",
+            "category": "GIS"
+        },
+        {
+            "name": "Google Earth Engine",
+            "level": "Intermediate",
+            "confidence": 74,
+            "summary": "Cloud-based platform for executing remote sensing analysis across wide-scale satellite datasets.",
+            "category": "GIS"
         }
     ]
 }
