@@ -1,15 +1,16 @@
 import json
-from database import db_session, engine, Base, init_db
+from database import db_session, init_db
 from models import Experience, SkillCategory, Skill
 
-def seed():
+def seed(prod: bool=False):
     session = db_session
 
     # db reset
-    # session.query(Skill).delete()
-    # session.query(SkillCategory).delete()
-    # session.query(Experience).delete()
-    # session.commit()
+    if prod:
+        session.query(Skill).delete()
+        session.query(SkillCategory).delete()
+        session.query(Experience).delete()
+        session.commit()
 
     with open('./app/data/data.json') as f:
         data = json.load(f)
