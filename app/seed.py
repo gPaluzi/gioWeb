@@ -2,11 +2,11 @@ import json
 from database import db_session, init_db
 from models import Experience, SkillCategory, Skill
 
-def seed(prod: bool=False):
+def seed(reset: bool=False):
     session = db_session
 
     # db reset
-    if prod:
+    if reset is True:
         session.query(Skill).delete()
         session.query(SkillCategory).delete()
         session.query(Experience).delete()
@@ -43,5 +43,5 @@ def seed(prod: bool=False):
 
 if __name__ == '__main__':
     init_db()
-    seed()
+    seed(True)
     db_session.remove()

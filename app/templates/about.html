@@ -63,17 +63,17 @@
                     <!-- Education subsection -->
                     <h3 class="display-6 fw-normal" id="education">Education</h3>
                     <div class="timeline fw-light py-3 my-1">
-                        {% for job in about.experience.education %}
+                        {% for edu in data['education'] %}
                         <div class="timeline-item card shadow-sm w-75">
                             <div class="card-body">
                                 <h4 class="card-title fs-3 fw-medium mb-2">
-                                    {{ job.place }}
+                                    {{ edu.organization }}
                                 </h4>
                                 <p class="card-subtitle fs-5 mb-0 fw-normal text-body-secondary">
-                                    {{ job.major }}
+                                    {{ edu.name }}
                                 </p>
                                 <p class="card-subtitle fs-5 mb-2 fw-normal text-body-secondary">
-                                    {{ job.time}}
+                                    {{ edu.start_date.strftime('%Y') }} - {{ edu.end_date.strftime('%Y') if edu.end_date else 'Present'}}
                                 </p>
                                 <div class="accordion accordion-flush" id="edu-accordion{{ loop.index }}">
                                     <div class="accordion-item border-0">
@@ -84,7 +84,7 @@
                                         </p>
                                         <div id="edu-collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#edu-accordion{{ loop.index }}">
                                             <div class="accordion-body px-0 pt-2 pb-0 fs-5">
-                                                {{job.description}}
+                                                {{edu.description}}
                                             </div>
                                         </div>
                                     </div>
@@ -97,17 +97,17 @@
                     <!-- Certification subection -->
                     <h3 class="display-6 fw-normal" id="certification">Certification</h3>
                     <div class="timeline fw-light py-3 my-1">
-                        {% for job in about.experience.certification %}
+                        {% for certificate in data['certification'] %}
                         <div class="timeline-item card shadow-sm w-75">
                             <div class="card-body">
                                 <h4 class="card-title fs-3 fw-medium mb-2">
-                                    {{ job.title }}
+                                    {{ certificate.name }}
                                 </h4>
                                 <p class="card-subtitle fs-5 mb-0 fw-normal text-body-secondary">
-                                    {{ job.publisher }}
+                                    {{ certificate.organization }}
                                 </p>
                                 <p class="card-subtitle fs-5 mb-2 fw-normal text-body-secondary">
-                                    {{ job.time }}
+                                    {{ certificate.start_date.strftime('%Y') }}
                                 </p>
                                 <div class="accordion accordion-flush" id="cer-accordion{{ loop.index }}">
                                     <div class="accordion-item border-0">
@@ -118,7 +118,7 @@
                                         </p>
                                         <div id="cer-collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#cer-accordion{{ loop.index }}">
                                             <div class="accordion-body px-0 pt-2 pb-0 fs-5">
-                                                {{job.description}}
+                                                {{certificate.description}}
                                             </div>
                                         </div>
                                     </div>
@@ -131,17 +131,17 @@
                     <!-- Volunteer subsection -->
                     <h3 class="display-6 fw-normal" id="volunteer">Volunteer</h3>
                     <div class="timeline fw-light py-3 my-1">
-                        {% for job in about.experience.volunteer %}
+                        {% for volunteer in data['volunteer'] %}
                         <div class="timeline-item card shadow-sm w-75">
                             <div class="card-body">
                                 <h4 class="card-title fs-3 fw-medium mb-2">
-                                    {{ job.activity }}
+                                    {{ volunteer.name }}
                                 </h4>
                                 <p class="card-subtitle fs-5 mb-0 fw-normal text-body-secondary">
-                                    {{ job.place }}
+                                    {{ volunteer.organization }}
                                 </p>
                                 <p class="card-subtitle fs-5 mb-2 fw-normal text-body-secondary">
-                                    {{ job.time }}
+                                    {{ volunteer.start_date.strftime('%Y') }}
                                 </p>
                                 <div class="accordion accordion-flush" id="vol-accordion{{ loop.index }}">
                                     <div class="accordion-item border-0">
@@ -152,7 +152,7 @@
                                         </p>
                                         <div id="vol-collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#vol-accordion{{ loop.index }}">
                                             <div class="accordion-body px-0 pt-2 pb-0 fs-5">
-                                                {{job.description}}
+                                                {{ volunteer.description }}
                                             </div>
                                         </div>
                                     </div>
@@ -165,17 +165,17 @@
                     <!-- Other experience subsection -->
                     <h3 class="display-6 fw-normal" id="oth-exp">Other</h3>
                     <div class="timeline fw-light py-3 my-1">
-                        {% for job in about.experience.other %}
+                        {% for other in data['other'] %}
                         <div class="timeline-item card shadow-sm w-75">
                             <div class="card-body">
                                 <h4 class="card-title fs-3 fw-medium mb-2">
-                                    {{ job.activity }}
+                                    {{ other.name }}
                                 </h4>
                                 <p class="card-subtitle fs-5 mb-0 fw-normal text-body-secondary">
-                                    {{ job.explain }}
+                                    {{ other.organization }}
                                 </p>
                                 <p class="card-subtitle fs-5 mb-2 fw-normal text-body-secondary">
-                                    {{ job.time }}
+                                    {{ other.start_date.strftime('%Y') }}
                                 </p>
                                 <div class="accordion accordion-flush" id="oth-accordion{{ loop.index }}">
                                     <div class="accordion-item border-0">
@@ -186,7 +186,7 @@
                                         </p>
                                         <div id="oth-collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#oth-accordion{{ loop.index }}">
                                             <div class="accordion-body px-0 pt-2 pb-0 fs-5">
-                                                {{job.description}}
+                                                {{otherj.description}}
                                             </div>
                                         </div>
                                     </div>

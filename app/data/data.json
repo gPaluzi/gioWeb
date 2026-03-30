@@ -41,8 +41,16 @@
             "description": "The 300-hours curriculum involved basic foundation of buuilding user-friendly, accessible web applications. Solve a minimum five mini-project to achieve the certification. This ensure my technical tools are not only functional but also intuitive to end-users."
         },
         {
-            "name": "BEAT Program Fellow",
+            "name": "Spatial Modelling Teaching Assistant",
             "category": "Volunteer",
+            "organization": "Forestry Faculty, IPB",
+            "start_date": "2021-01-01",
+            "end_date": "2023-12-31",
+            "description": "Conducted research on javan leopard bioaccoustic and training in PAM monitoring. My participation emphasized the integration of spatial science with wildlife monitoring tools to solve conservation challanges"
+        },
+        {
+            "name": "BEAT Program Fellow",
+            "category": "Other",
             "organization": "Cornell Lab of Ornithology",
             "start_date": "2026-02-01",
             "end_date": null,
