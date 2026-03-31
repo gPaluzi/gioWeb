@@ -253,8 +253,11 @@
                     <a href="#volunteer" class="nav-link ms-3 my-1">Volunteer</a>
                     <a href="#oth-exp" class="nav-link ms-3 my-1">Other experience</a>
                     <a href="#skills" class="nav-link">Skills</a>
-                    <a href="#gis" class="nav-link ms-3 my-1">GIS</a>
-                    <a href="#programming" class="nav-link ms-3 my-1">Programming</a>
+                    {% for skill_name, skill_item in ski_data.items() %}
+                    <a href="#{{ skill_name | lower | replace(' ', '-') }}" class="nav-link ms-3 my-1">
+                        {{ skill_name }}
+                    </a>
+                    {% endfor %}
                 </div>
             </nav>          
         </div>
