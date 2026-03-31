@@ -29,7 +29,7 @@
                     <!-- Career subsection -->
                     <h3 class="display-6 fw-normal" id="career">Career</h3>
                     <div class="timeline fw-light py-3 my-1">
-                        {% for career in data['career'] %}
+                        {% for career in exp_data['career'] %}
                         <div class="timeline-item card shadow-sm w-75">
                             <div class="card-body">
                                 <h4 class="card-title fs-3 fw-medium mb-2">
@@ -63,7 +63,7 @@
                     <!-- Education subsection -->
                     <h3 class="display-6 fw-normal" id="education">Education</h3>
                     <div class="timeline fw-light py-3 my-1">
-                        {% for edu in data['education'] %}
+                        {% for edu in exp_data['education'] %}
                         <div class="timeline-item card shadow-sm w-75">
                             <div class="card-body">
                                 <h4 class="card-title fs-3 fw-medium mb-2">
@@ -97,7 +97,7 @@
                     <!-- Certification subection -->
                     <h3 class="display-6 fw-normal" id="certification">Certification</h3>
                     <div class="timeline fw-light py-3 my-1">
-                        {% for certificate in data['certification'] %}
+                        {% for certificate in exp_data['certification'] %}
                         <div class="timeline-item card shadow-sm w-75">
                             <div class="card-body">
                                 <h4 class="card-title fs-3 fw-medium mb-2">
@@ -131,7 +131,7 @@
                     <!-- Volunteer subsection -->
                     <h3 class="display-6 fw-normal" id="volunteer">Volunteer</h3>
                     <div class="timeline fw-light py-3 my-1">
-                        {% for volunteer in data['volunteer'] %}
+                        {% for volunteer in exp_data['volunteer'] %}
                         <div class="timeline-item card shadow-sm w-75">
                             <div class="card-body">
                                 <h4 class="card-title fs-3 fw-medium mb-2">
@@ -165,7 +165,7 @@
                     <!-- Other experience subsection -->
                     <h3 class="display-6 fw-normal" id="oth-exp">Other</h3>
                     <div class="timeline fw-light py-3 my-1">
-                        {% for other in data['other'] %}
+                        {% for other in exp_data['other'] %}
                         <div class="timeline-item card shadow-sm w-75">
                             <div class="card-body">
                                 <h4 class="card-title fs-3 fw-medium mb-2">
@@ -186,7 +186,7 @@
                                         </p>
                                         <div id="oth-collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#oth-accordion{{ loop.index }}">
                                             <div class="accordion-body px-0 pt-2 pb-0 fs-5">
-                                                {{otherj.description}}
+                                                {{ other.description }}
                                             </div>
                                         </div>
                                     </div>
@@ -205,14 +205,15 @@
                     Tools that i used to face environmental problems.
                 </p>
 
-                <!-- GIS subsection -->
+                <!-- Skills card -->
+                {% for skill_name, skill_item in ski_data.items() %}
                 <div class="container-fluid mb-5">
-                    <div class="card shadow my-4" id="gis">
+                    <div class="card shadow my-4" id="{{ skill_name | lower | replace(' ', '-') }}">
                         <div class="card-header">
-                            <h3 class="display-6 fw-normal">GIS</h3>
+                            <h3 class="display-6 fw-normal">{{ skill_name }}</h3>
                         </div>
                         <div class="card-body row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-5 p-5">
-                            {% for skill in about.skills.gis %}
+                            {% for skill in skill_item %}
                             <div class="col d-flex align-items-start">
                                 <div>
                                     <div class="d-flex align-items-end justify-content-between">
@@ -220,7 +221,7 @@
                                             {{ skill.name }}
                                         </h4>
                                         <span class="text-muted small">
-                                            {{ skill.level }}
+                                            {{ skill.level.capitalize() }}
                                         </span>
                                     </div>
                                     <div class="progress my-2" style="height: 6px;">
@@ -235,37 +236,7 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Programming subsection -->
-                <div class="container-fluid">
-                    <div class="card shadow my-4" id="programming">
-                        <div class="card-header">
-                            <h3 class="display-6 fw-normal">Programming</h3>
-                        </div>
-                        <div class="card-body row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-5 p-5">
-                            {% for skill in about.skills.programming %}
-                            <div class="col d-flex align-items-start gx-4">
-                                <div>
-                                    <div class="d-flex align-items-end justify-content-between">
-                                        <h4 class="display-5 fw-semibold mb-0 fs-3 text-body-emphasis">
-                                            {{ skill.name }}
-                                        </h4>
-                                        <span class="text-muted small">
-                                            {{ skill.level }}
-                                        </span>
-                                    </div>
-                                    <div class="progress my-2" style="height: 6px;">
-                                        <div class="progress-bar bg-secondary" style="width: {{ skill.confidence | int }}%;"></div>
-                                    </div>
-                                    <p>
-                                        {{ skill.summary }}
-                                    </p>
-                                </div>
-                            </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
 
