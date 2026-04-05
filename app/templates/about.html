@@ -5,32 +5,32 @@
     <div class="row">
 
         <!-- Content -->
-        <div class="col-9 ps-3">
+        <div class="col-12 col-md-9">
 
             <!-- Opening paragraph -->
-            <div class="container-fluid py-2">
-                <h1 class="display-1 fw-normal" id="overview">Overview</h1>
-                <p class="lead fs-3">
+            <div class="container-fluid py-2 pe-4 pe-md-2">
+                <h1 class="display-4 display-md-2 fw-normal" id="overview">Overview</h1>
+                <p class="lead">
                     a GIS Specialist and Junior Developer with 3 years work experience, dedicated to building technical bridges between environmental conservation and software development.
                 </p>
-                <p class="lead fs-3">
+                <p class="lead">
                     Having spent years in conservation sector, I saw a recurring need for better automation and user-friendly tools for field researchers. This led me to pivot from a traditional forestry path into the world of software development, focusing on geospatial system and Python-based applications. I am driven by the process of continuous improvement and technical refinement, whether I am optimizing a data pipeline or building a custom web application.
                 </p>
             </div>
 
             <!-- Experience section -->
-            <div class="container-fluid py-2">
-                <h2 class="display-3 fw-normal" id="experience">Experience</h2>
-                <p  class="lead fs-3">
+            <div class="container-fluid py-2 pe-4 pe-md-2">
+                <h2 class="display-5 display-md-3 fw-normal" id="experience">Experience</h2>
+                <p  class="lead">
                     Brief documentation about my journey.
                 </p>
-                <div class="container-fluid ps-3">
+                <div class="container-fluid ps-0 ps-md-3">
 
                     <!-- Career subsection -->
                     <h3 class="display-6 fw-normal" id="career">Career</h3>
-                    <div class="timeline fw-light py-3 my-1">
+                    <div class="timeline fw-light py-3 my-md-1">
                         {% for career in exp_data['career'] %}
-                        <div class="timeline-item card shadow-sm w-75">
+                        <div class="timeline-item card shadow-sm">
                             <div class="card-body">
                                 <h4 class="card-title fs-3 fw-medium mb-2">
                                     {{ career.name }}
@@ -44,7 +44,7 @@
                                 <div class="accordion accordion-flush" id="car-accordion{{ loop.index }}">
                                     <div class="accordion-item border-0">
                                         <p class="accordion-header">
-                                            <button class="accordion-button collapsed px-0 py-0 fs-5 mb-0 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#car-collapse{{ loop.index }}">
+                                            <button class="accordion-button collapsed px-0 py-0 fs-5 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#car-collapse{{ loop.index }}">
                                                 Description
                                             </button>
                                         </p>
@@ -64,7 +64,7 @@
                     <h3 class="display-6 fw-normal" id="education">Education</h3>
                     <div class="timeline fw-light py-3 my-1">
                         {% for edu in exp_data['education'] %}
-                        <div class="timeline-item card shadow-sm w-75">
+                        <div class="timeline-item card shadow-sm">
                             <div class="card-body">
                                 <h4 class="card-title fs-3 fw-medium mb-2">
                                     {{ edu.organization }}
@@ -98,7 +98,7 @@
                     <h3 class="display-6 fw-normal" id="certification">Certification</h3>
                     <div class="timeline fw-light py-3 my-1">
                         {% for certificate in exp_data['certification'] %}
-                        <div class="timeline-item card shadow-sm w-75">
+                        <div class="timeline-item card shadow-sm">
                             <div class="card-body">
                                 <h4 class="card-title fs-3 fw-medium mb-2">
                                     {{ certificate.name }}
@@ -132,7 +132,7 @@
                     <h3 class="display-6 fw-normal" id="volunteer">Volunteer</h3>
                     <div class="timeline fw-light py-3 my-1">
                         {% for volunteer in exp_data['volunteer'] %}
-                        <div class="timeline-item card shadow-sm w-75">
+                        <div class="timeline-item card shadow-sm">
                             <div class="card-body">
                                 <h4 class="card-title fs-3 fw-medium mb-2">
                                     {{ volunteer.name }}
@@ -166,7 +166,7 @@
                     <h3 class="display-6 fw-normal" id="oth-exp">Other</h3>
                     <div class="timeline fw-light py-3 my-1">
                         {% for other in exp_data['other'] %}
-                        <div class="timeline-item card shadow-sm w-75">
+                        <div class="timeline-item card shadow-sm">
                             <div class="card-body">
                                 <h4 class="card-title fs-3 fw-medium mb-2">
                                     {{ other.name }}
@@ -241,7 +241,7 @@
         </div>
 
         <!-- Table of content -->
-        <div class="col-3">
+        <div class="col-12 col-md-3">
             <nav id="toc" class="h-100 flex-column align-items-stretch ps-4 border-start d-none d-md-block">
                 <div class="position-sticky top-0 pt-3 fs-5 fw-light">
                     <h6 class="fs-4">On this Page</h6>

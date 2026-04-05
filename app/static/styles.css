@@ -8,7 +8,7 @@
 /* timeline  */
 
 .timeline {
-    margin-left: 1rem;
+    margin-left: 5%;
     border-left: 2px solid black;
     padding-left: 1.5rem;
     position: relative;
@@ -17,6 +17,7 @@
 .timeline-item {
     position: relative;
     margin-bottom: 20px;
+    max-width: 100%;
 }
 
 /* timeline dot */
@@ -33,6 +34,8 @@
     box-shadow: 0 0 0 2px white;
 }
 
+/* card accordion */
+
 .accordion-button:not(collapsed) {
     background-color: white !important;
 }
@@ -47,10 +50,28 @@
     box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 8px !important;
 }
 
+/* Portfolio cards */
+
 .portfolio-card {
     transition: transform 0.3s ease;
 }
 
 .portfolio-card:hover {
     transform: scale(1.02) translateY(-5px) translateX(0);
+}
+
+/* Mobile adjustment */
+
+@media (max-width: 768px) {
+    .timeline {
+        margin-left: o;
+        padding-left: 1rem;
+        border-left: 2px solid black;
+    }
+
+    .timeline-item::before {
+        left: -1.5rem;
+        width: 12px;
+        height: 12px;
+    }
 }
