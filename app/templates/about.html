@@ -30,27 +30,29 @@
                     <h3 class="display-6 fw-normal" id="career">Career</h3>
                     <div class="timeline fw-light py-3 my-md-1">
                         {% for career in exp_data['career'] %}
-                        <div class="timeline-item card shadow-sm">
-                            <div class="card-body">
-                                <h4 class="card-title fs-3 fw-medium mb-2">
-                                    {{ career.name }}
-                                </h4>
-                                <p class="card-subtitle fs-5 mb-0 fw-normal text-body-secondary">
-                                    {{ career.organization }}
-                                </p>
-                                <p class="card-title fs-5 mb-2 fw-normal text-body-secondary">
-                                    {{ career.start_date.strftime('%Y') }} - {{ career.end_date.strftime('%Y') if career.end_date else 'Present'}}
-                                </p>
-                                <div class="accordion accordion-flush" id="car-accordion{{ loop.index }}">
-                                    <div class="accordion-item border-0">
-                                        <p class="accordion-header">
-                                            <button class="accordion-button collapsed px-0 py-0 fs-5 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#car-collapse{{ loop.index }}">
-                                                Description
-                                            </button>
-                                        </p>
-                                        <div id="car-collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#car-accordion{{ loop.index }}">
-                                            <div class="accordion-body px-0 pt-2 pb-0 fs-5">
-                                                {{ career.description }}
+                        <div class="timeline-item">
+                            <div class="card hover-lift shadow-sm">
+                                <div class="card-body">
+                                    <h4 class="card-title fs-3 fw-medium mb-2">
+                                        {{ career.name }}
+                                    </h4>
+                                    <p class="card-subtitle fs-5 mb-0 fw-normal text-body-secondary">
+                                        {{ career.organization }}
+                                    </p>
+                                    <p class="card-title fs-5 mb-2 fw-normal text-body-secondary">
+                                        {{ career.start_date.strftime('%Y') }} - {{ career.end_date.strftime('%Y') if career.end_date else 'Present'}}
+                                    </p>
+                                    <div class="accordion accordion-flush" id="car-accordion{{ loop.index }}">
+                                        <div class="accordion-item border-0">
+                                            <p class="accordion-header">
+                                                <button class="accordion-button collapsed px-0 py-0 fs-5 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#car-collapse{{ loop.index }}">
+                                                    Description
+                                                </button>
+                                            </p>
+                                            <div id="car-collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#car-accordion{{ loop.index }}">
+                                                <div class="accordion-body px-0 pt-2 pb-0 fs-5">
+                                                    {{ career.description }}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -64,27 +66,29 @@
                     <h3 class="display-6 fw-normal" id="education">Education</h3>
                     <div class="timeline fw-light py-3 my-1">
                         {% for edu in exp_data['education'] %}
-                        <div class="timeline-item card shadow-sm">
-                            <div class="card-body">
-                                <h4 class="card-title fs-3 fw-medium mb-2">
-                                    {{ edu.organization }}
-                                </h4>
-                                <p class="card-subtitle fs-5 mb-0 fw-normal text-body-secondary">
-                                    {{ edu.name }}
-                                </p>
-                                <p class="card-subtitle fs-5 mb-2 fw-normal text-body-secondary">
-                                    {{ edu.start_date.strftime('%Y') }} - {{ edu.end_date.strftime('%Y') if edu.end_date else 'Present'}}
-                                </p>
-                                <div class="accordion accordion-flush" id="edu-accordion{{ loop.index }}">
-                                    <div class="accordion-item border-0">
-                                        <p class="accordion-header">
-                                            <button class="accordion-button collapsed px-0 py-0 fs-5 mb-0 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#edu-collapse{{ loop.index }}">
-                                                Description
-                                            </button>
-                                        </p>
-                                        <div id="edu-collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#edu-accordion{{ loop.index }}">
-                                            <div class="accordion-body px-0 pt-2 pb-0 fs-5">
-                                                {{edu.description}}
+                        <div class="timeline-item">
+                            <div class="card hover-lift shadow-sm">
+                                <div class="card-body">
+                                    <h4 class="card-title fs-3 fw-medium mb-2">
+                                        {{ edu.organization }}
+                                    </h4>
+                                    <p class="card-subtitle fs-5 mb-0 fw-normal text-body-secondary">
+                                        {{ edu.name }}
+                                    </p>
+                                    <p class="card-subtitle fs-5 mb-2 fw-normal text-body-secondary">
+                                        {{ edu.start_date.strftime('%Y') }} - {{ edu.end_date.strftime('%Y') if edu.end_date else 'Present'}}
+                                    </p>
+                                    <div class="accordion accordion-flush" id="edu-accordion{{ loop.index }}">
+                                        <div class="accordion-item border-0">
+                                            <p class="accordion-header">
+                                                <button class="accordion-button collapsed px-0 py-0 fs-5 mb-0 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#edu-collapse{{ loop.index }}">
+                                                    Description
+                                                </button>
+                                            </p>
+                                            <div id="edu-collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#edu-accordion{{ loop.index }}">
+                                                <div class="accordion-body px-0 pt-2 pb-0 fs-5">
+                                                    {{edu.description}}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -98,7 +102,8 @@
                     <h3 class="display-6 fw-normal" id="certification">Certification</h3>
                     <div class="timeline fw-light py-3 my-1">
                         {% for certificate in exp_data['certification'] %}
-                        <div class="timeline-item card shadow-sm">
+                        <div class="timeline-item">
+                            <div class="card hover-lift shadow-sm">
                             <div class="card-body">
                                 <h4 class="card-title fs-3 fw-medium mb-2">
                                     {{ certificate.name }}
@@ -106,19 +111,20 @@
                                 <p class="card-subtitle fs-5 mb-0 fw-normal text-body-secondary">
                                     {{ certificate.organization }}
                                 </p>
-                                <p class="card-subtitle fs-5 mb-2 fw-normal text-body-secondary">
-                                    {{ certificate.start_date.strftime('%Y') }}
-                                </p>
-                                <div class="accordion accordion-flush" id="cer-accordion{{ loop.index }}">
-                                    <div class="accordion-item border-0">
-                                        <p class="accordion-header">
-                                            <button class="accordion-button collapsed px-0 py-0 fs-5 mb-0 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#cer-collapse{{ loop.index }}">
-                                                Description
-                                            </button>
-                                        </p>
-                                        <div id="cer-collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#cer-accordion{{ loop.index }}">
-                                            <div class="accordion-body px-0 pt-2 pb-0 fs-5">
-                                                {{certificate.description}}
+                                    <p class="card-subtitle fs-5 mb-2 fw-normal text-body-secondary">
+                                        {{ certificate.start_date.strftime('%Y') }}
+                                    </p>
+                                    <div class="accordion accordion-flush" id="cer-accordion{{ loop.index }}">
+                                        <div class="accordion-item border-0">
+                                            <p class="accordion-header">
+                                                <button class="accordion-button collapsed px-0 py-0 fs-5 mb-0 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#cer-collapse{{ loop.index }}">
+                                                    Description
+                                                </button>
+                                            </p>
+                                            <div id="cer-collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#cer-accordion{{ loop.index }}">
+                                                <div class="accordion-body px-0 pt-2 pb-0 fs-5">
+                                                    {{certificate.description}}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -132,7 +138,8 @@
                     <h3 class="display-6 fw-normal" id="volunteer">Volunteer</h3>
                     <div class="timeline fw-light py-3 my-1">
                         {% for volunteer in exp_data['volunteer'] %}
-                        <div class="timeline-item card shadow-sm">
+                        <div class="timeline-item">
+                            <div class="card hover-lift shadow-sm">
                             <div class="card-body">
                                 <h4 class="card-title fs-3 fw-medium mb-2">
                                     {{ volunteer.name }}
@@ -143,16 +150,17 @@
                                 <p class="card-subtitle fs-5 mb-2 fw-normal text-body-secondary">
                                     {{ volunteer.start_date.strftime('%Y') }}
                                 </p>
-                                <div class="accordion accordion-flush" id="vol-accordion{{ loop.index }}">
-                                    <div class="accordion-item border-0">
-                                        <p class="accordion-header">
-                                            <button class="accordion-button collapsed px-0 py-0 fs-5 mb-0 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#vol-collapse{{ loop.index }}">
-                                                Description
-                                            </button>
-                                        </p>
-                                        <div id="vol-collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#vol-accordion{{ loop.index }}">
-                                            <div class="accordion-body px-0 pt-2 pb-0 fs-5">
-                                                {{ volunteer.description }}
+                                    <div class="accordion accordion-flush" id="vol-accordion{{ loop.index }}">
+                                        <div class="accordion-item border-0">
+                                            <p class="accordion-header">
+                                                <button class="accordion-button collapsed px-0 py-0 fs-5 mb-0 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#vol-collapse{{ loop.index }}">
+                                                    Description
+                                                </button>
+                                            </p>
+                                            <div id="vol-collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#vol-accordion{{ loop.index }}">
+                                                <div class="accordion-body px-0 pt-2 pb-0 fs-5">
+                                                    {{ volunteer.description }}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -166,27 +174,29 @@
                     <h3 class="display-6 fw-normal" id="oth-exp">Other</h3>
                     <div class="timeline fw-light py-3 my-1">
                         {% for other in exp_data['other'] %}
-                        <div class="timeline-item card shadow-sm">
+                        <div class="timeline-item">
+                            <div class="card hover-lift shadow-sm">
                             <div class="card-body">
-                                <h4 class="card-title fs-3 fw-medium mb-2">
-                                    {{ other.name }}
-                                </h4>
-                                <p class="card-subtitle fs-5 mb-0 fw-normal text-body-secondary">
-                                    {{ other.organization }}
-                                </p>
-                                <p class="card-subtitle fs-5 mb-2 fw-normal text-body-secondary">
-                                    {{ other.start_date.strftime('%Y') }}
-                                </p>
-                                <div class="accordion accordion-flush" id="oth-accordion{{ loop.index }}">
-                                    <div class="accordion-item border-0">
-                                        <p class="accordion-header">
-                                            <button class="accordion-button collapsed px-0 py-0 fs-5 mb-0 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#oth-collapse{{ loop.index }}">
-                                                Description
-                                            </button>
-                                        </p>
-                                        <div id="oth-collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#oth-accordion{{ loop.index }}">
-                                            <div class="accordion-body px-0 pt-2 pb-0 fs-5">
-                                                {{ other.description }}
+                                    <h4 class="card-title fs-3 fw-medium mb-2">
+                                        {{ other.name }}
+                                    </h4>
+                                    <p class="card-subtitle fs-5 mb-0 fw-normal text-body-secondary">
+                                        {{ other.organization }}
+                                    </p>
+                                    <p class="card-subtitle fs-5 mb-2 fw-normal text-body-secondary">
+                                        {{ other.start_date.strftime('%Y') }}
+                                    </p>
+                                    <div class="accordion accordion-flush" id="oth-accordion{{ loop.index }}">
+                                        <div class="accordion-item border-0">
+                                            <p class="accordion-header">
+                                                <button class="accordion-button collapsed px-0 py-0 fs-5 mb-0 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#oth-collapse{{ loop.index }}">
+                                                    Description
+                                                </button>
+                                            </p>
+                                            <div id="oth-collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#oth-accordion{{ loop.index }}">
+                                                <div class="accordion-body px-0 pt-2 pb-0 fs-5">
+                                                    {{ other.description }}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -208,7 +218,7 @@
                 <!-- Skills card -->
                 {% for skill_name, skill_item in ski_data.items() %}
                 <div class="container-fluid mb-5">
-                    <div class="card shadow my-4" id="{{ skill_name | lower | replace(' ', '-') }}">
+                    <div class="card hover-lift shadow my-4" id="{{ skill_name | lower | replace(' ', '-') }}">
                         <div class="card-header">
                             <h3 class="display-6 fw-normal">{{ skill_name }}</h3>
                         </div>
