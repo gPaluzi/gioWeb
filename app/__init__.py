@@ -1,8 +1,9 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from sqlalchemy import select
 from .models import Experience, Skill
 from .database import db_session
 from collections import defaultdict
+from datetime import date
 
 def create_app():
     app = Flask(__name__)
@@ -13,7 +14,15 @@ def create_app():
     
     @app.route('/about')
     def about():
-        exp_query = select(Experience).order_by(Experience.start_date.desc())
+        now_date = date.today()
+
+        years = request.args.get('years', default=5, type=int)
+        cutoff_date = date(now_date.year - 5, now_date.month, now_date.day)
+
+        exp_query = select(Experience).where(
+            Experience.start_date >= cutoff_date
+        ).order_by(Experience.start_date.desc())
+        
         exp_result = db_session.execute(exp_query)
 
         exp_data = defaultdict(list)
