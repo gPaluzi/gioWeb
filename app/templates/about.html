@@ -27,7 +27,20 @@
                 <div class="container-fluid ps-0 ps-md-3">
 
                     <!-- Career subsection -->
-                    <h3 class="display-6 fw-normal" id="career">Career</h3>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h3 class="display-6 fw-normal" id="career">Career</h3>
+                        <form action="/about" method="get">
+                            <select name="exp_filter" class="form-select" onchange="this.form.submit()">
+                                <option value="all" {% if active_filter == 'all' %}selected{% endif %}>
+                                    All Experience
+                                </option>
+                                <option value="last5" {% if active_filter == 'last5' %}selected{% endif %}>
+                                    Last 5 Years
+                                </option>
+                            </select>
+                        </form>
+                    </div>
+
                     <div class="timeline fw-light py-3 my-md-1">
                         {% for career in exp_data['career'] %}
                         <div class="timeline-item">

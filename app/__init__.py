@@ -16,13 +16,15 @@ def create_app():
     def about():
         now_date = date.today()
 
-        years = request.args.get('years', default=5, type=int)
-        cutoff_date = date(now_date.year - 5, now_date.month, now_date.day)
+        filter_type = request.args.get('exp_filter', 'all')
 
-        exp_query = select(Experience).where(
-            Experience.start_date >= cutoff_date
-        ).order_by(Experience.start_date.desc())
-        
+        exp_query = select(Experience)
+
+        if filter_type == 'last5':
+            cutoff_date = date(now_date.year - 5, now_date.month, now_date.day)
+            exp_query = exp_query.where(Experience.start_date >= cutoff_date)
+
+        exp_query = exp_query.order_by(Experience.start_date.desc())
         exp_result = db_session.execute(exp_query)
 
         exp_data = defaultdict(list)
@@ -36,7 +38,12 @@ def create_app():
         for ski in ski_result.scalars():
             ski_data[ski.category.name].append(ski)
 
-        return render_template("about.html", exp_data = exp_data, ski_data = ski_data)
+        return render_template(
+            "about.html",
+            exp_data = exp_data, 
+            ski_data = ski_data,
+            active_filter = filter_type
+        )
     
     @app.route("/portfolio")
     def portfolio():
