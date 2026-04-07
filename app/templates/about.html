@@ -76,7 +76,9 @@
                     </div>
                     
                     <!-- Education subsection -->
+                    {% if 'education' in exp_data.keys() %}
                     <h3 class="display-6 fw-normal" id="education">Education</h3>
+                    {% endif %}
                     <div class="timeline fw-light py-3 my-1">
                         {% for edu in exp_data['education'] %}
                         <div class="timeline-item">
@@ -112,7 +114,9 @@
                     </div>
 
                     <!-- Certification subection -->
+                    {% if 'certification' in exp_data.keys() %}
                     <h3 class="display-6 fw-normal" id="certification">Certification</h3>
+                    {% endif %}
                     <div class="timeline fw-light py-3 my-1">
                         {% for certificate in exp_data['certification'] %}
                         <div class="timeline-item">
@@ -148,7 +152,9 @@
                     </div>
 
                     <!-- Volunteer subsection -->
+                    {% if 'volunteer' in exp_data.keys() %}
                     <h3 class="display-6 fw-normal" id="volunteer">Volunteer</h3>
+                    {% endif %}
                     <div class="timeline fw-light py-3 my-1">
                         {% for volunteer in exp_data['volunteer'] %}
                         <div class="timeline-item">
@@ -184,7 +190,9 @@
                     </div>
 
                     <!-- Other experience subsection -->
+                    {% if 'other' in exp_data.keys() %}
                     <h3 class="display-6 fw-normal" id="oth-exp">Other</h3>
+                    {% endif %}
                     <div class="timeline fw-light py-3 my-1">
                         {% for other in exp_data['other'] %}
                         <div class="timeline-item">
