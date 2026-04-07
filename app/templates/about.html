@@ -28,7 +28,9 @@
 
                     <!-- Career subsection -->
                     <div class="d-flex justify-content-between align-items-center mb-3">
+                        {% if exp_data.get('career') %}
                         <h3 class="display-6 fw-normal" id="career">Career</h3>
+                        {% endif %}
                         <form action="/about" method="get">
                             <select name="exp_filter" class="form-select" onchange="this.form.submit()">
                                 <option value="all" {% if active_filter == 'all' %}selected{% endif %}>
@@ -76,7 +78,7 @@
                     </div>
                     
                     <!-- Education subsection -->
-                    {% if 'education' in exp_data.keys() %}
+                    {% if exp_data.get('education') %}
                     <h3 class="display-6 fw-normal" id="education">Education</h3>
                     {% endif %}
                     <div class="timeline fw-light py-3 my-1">
@@ -114,7 +116,7 @@
                     </div>
 
                     <!-- Certification subection -->
-                    {% if 'certification' in exp_data.keys() %}
+                    {% if exp_data.get('certification') %}
                     <h3 class="display-6 fw-normal" id="certification">Certification</h3>
                     {% endif %}
                     <div class="timeline fw-light py-3 my-1">
@@ -152,7 +154,7 @@
                     </div>
 
                     <!-- Volunteer subsection -->
-                    {% if 'volunteer' in exp_data.keys() %}
+                    {% if exp_data.get('volunteer') %}
                     <h3 class="display-6 fw-normal" id="volunteer">Volunteer</h3>
                     {% endif %}
                     <div class="timeline fw-light py-3 my-1">
@@ -190,7 +192,7 @@
                     </div>
 
                     <!-- Other experience subsection -->
-                    {% if 'other' in exp_data.keys() %}
+                    {% if exp_data.get('other') %}
                     <h3 class="display-6 fw-normal" id="oth-exp">Other</h3>
                     {% endif %}
                     <div class="timeline fw-light py-3 my-1">
