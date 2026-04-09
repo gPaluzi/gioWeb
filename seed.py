@@ -1,6 +1,6 @@
 import json
-from database import db_session, init_db
-from models import Experience, SkillCategory, Skill
+from app.database import db_session, init_db
+from app.models import Experience, SkillCategory, Skill
 
 def seed(reset: bool=False):
     session = db_session

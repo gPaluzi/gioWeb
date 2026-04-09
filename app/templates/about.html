@@ -19,19 +19,21 @@
             </div>
 
             <!-- Experience section -->
-            <div class="container-fluid py-2 pe-4 pe-md-2">
+            <div class="container-fluid py-2 px-4 pe-md-2">
                 <h2 class="display-5 display-md-3 fw-normal" id="experience">Experience</h2>
                 <p  class="lead">
                     Brief documentation about my journey.
                 </p>
-                <div class="container-fluid ps-0 ps-md-3">
 
-                    <!-- Career subsection -->
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        {% if exp_data.get('career') %}
-                        <h3 class="display-6 fw-normal" id="career">Career</h3>
-                        {% endif %}
-                        <form action="/about" method="get">
+                <!-- Experience ard template -->
+                <div class="container-fluid ps-0 ps-md-3">
+                    {% for experience in experiences %}
+                    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                        <h3 id="{{experience.id}}" class="display-6 fw-normal mb-0">
+                            {{experience.label}}
+                        </h3>
+                        {% if loop.first %}
+                        <form action="/about" method="get" class="ms-auto">
                             <select name="exp_filter" class="form-select" onchange="this.form.submit()">
                                 <option value="all" {% if active_filter == 'all' %}selected{% endif %}>
                                     All Experience
@@ -41,207 +43,68 @@
                                 </option>
                             </select>
                         </form>
+                        {% endif %}
                     </div>
 
-                    <div class="timeline fw-light py-3 my-md-1">
-                        {% for career in exp_data['career'] %}
-                        <div class="timeline-item">
-                            <div class="card hover-lift shadow-sm">
-                                <div class="card-body">
-                                    <h4 class="card-title fs-3 fw-medium mb-2">
-                                        {{ career.name }}
-                                    </h4>
-                                    <p class="card-subtitle fs-5 mb-0 fw-normal text-body-secondary">
-                                        {{ career.organization }}
-                                    </p>
-                                    <p class="card-title fs-5 mb-2 fw-normal text-body-secondary">
-                                        {{ career.start_date.strftime('%Y') }} - {{ career.end_date.strftime('%Y') if career.end_date else 'Present'}}
-                                    </p>
-                                    <div class="accordion accordion-flush" id="car-accordion{{ loop.index }}">
-                                        <div class="accordion-item border-0">
-                                            <p class="accordion-header">
-                                                <button class="accordion-button collapsed px-0 py-0 fs-5 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#car-collapse{{ loop.index }}">
-                                                    Description
-                                                </button>
-                                            </p>
-                                            <div id="car-collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#car-accordion{{ loop.index }}">
-                                                <div class="accordion-body px-0 pt-2 pb-0 fs-5">
-                                                    {{ career.description }}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                    
-                    <!-- Education subsection -->
-                    {% if exp_data.get('education') %}
-                    <h3 class="display-6 fw-normal" id="education">Education</h3>
-                    {% endif %}
                     <div class="timeline fw-light py-3 my-1">
-                        {% for edu in exp_data['education'] %}
-                        <div class="timeline-item">
-                            <div class="card hover-lift shadow-sm">
-                                <div class="card-body">
-                                    <h4 class="card-title fs-3 fw-medium mb-2">
-                                        {{ edu.organization }}
-                                    </h4>
-                                    <p class="card-subtitle fs-5 mb-0 fw-normal text-body-secondary">
-                                        {{ edu.name }}
-                                    </p>
-                                    <p class="card-subtitle fs-5 mb-2 fw-normal text-body-secondary">
-                                        {{ edu.start_date.strftime('%Y') }} - {{ edu.end_date.strftime('%Y') if edu.end_date else 'Present'}}
-                                    </p>
-                                    <div class="accordion accordion-flush" id="edu-accordion{{ loop.index }}">
-                                        <div class="accordion-item border-0">
-                                            <p class="accordion-header">
-                                                <button class="accordion-button collapsed px-0 py-0 fs-5 mb-0 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#edu-collapse{{ loop.index }}">
+                            {% for item in experience.data %}
+                            <div class="timeline-item">
+                                <div class="card hover-lift shadow-sm">
+                                    <div class="card-body">
+                                        {% if experience.highlight == 'organization' %}
+                                        <h4 class="card-title fs-3 fw-medium mb-2">
+                                            {{ item.organization }}
+                                        </h4>
+                                        <p class="card-subtitle fs-5 mb-2 fw-normal text-body-secondary">
+                                            {{ item.name}}
+                                        </p>
+                                        {% else %}
+                                        <h4 class="card-title fs-3 fw-medium mb-2">{{ item.name }}</h4>
+                                        <p class="card-subtitle fs-5 mb-2 fw-normal text-body-secondary">
+                                            {{ item.organization}}
+                                        </p>
+                                        {% endif %}
+                                        {% if experience.period == 'interval' %}
+                                        <p class="card-subtitle fs-5 mb-2 fw-normal text-body-secondary">
+                                            {{ item.start_date.strftime('%Y') }} - {{ item.end_date.strftime('%Y') if item.end_date else 'Present' }}
+                                        </p>
+                                        {% else %}
+                                        <p class="card-subtitle fs-5 mb-2 fw-normal text-body-secondary">
+                                            {{ item.start_date.strftime('%Y') }}
+                                        </p>
+                                        {% endif %}
+                                        <div class="accordion accordion-flush" id="accordion-{{ experience.label }}-{{ loop.index }}">
+                                            <div class="accordion-item border-0">
+                                                <p class="accordion-header">
+                                                    <button class="accordion-button collapsed px-0 py-0 fs-5 mb-0 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{ experience.label }}-{{ loop.index }}">
                                                     Description
-                                                </button>
-                                            </p>
-                                            <div id="edu-collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#edu-accordion{{ loop.index }}">
-                                                <div class="accordion-body px-0 pt-2 pb-0 fs-5">
-                                                    {{edu.description}}
+                                                    </button>
+                                                </p>
+                                                <div class="accordion-collapse collapse" id="collapse-{{ experience.label }}-{{ loop.index }}" data-bs-parent="#accordion-{{ experience.label }}-{{ loop.index }}">
+                                                    {{ item.description }}
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            {% endfor %}
                         </div>
-                        {% endfor %}
-                    </div>
-
-                    <!-- Certification subection -->
-                    {% if exp_data.get('certification') %}
-                    <h3 class="display-6 fw-normal" id="certification">Certification</h3>
-                    {% endif %}
-                    <div class="timeline fw-light py-3 my-1">
-                        {% for certificate in exp_data['certification'] %}
-                        <div class="timeline-item">
-                            <div class="card hover-lift shadow-sm">
-                            <div class="card-body">
-                                <h4 class="card-title fs-3 fw-medium mb-2">
-                                    {{ certificate.name }}
-                                </h4>
-                                <p class="card-subtitle fs-5 mb-0 fw-normal text-body-secondary">
-                                    {{ certificate.organization }}
-                                </p>
-                                    <p class="card-subtitle fs-5 mb-2 fw-normal text-body-secondary">
-                                        {{ certificate.start_date.strftime('%Y') }}
-                                    </p>
-                                    <div class="accordion accordion-flush" id="cer-accordion{{ loop.index }}">
-                                        <div class="accordion-item border-0">
-                                            <p class="accordion-header">
-                                                <button class="accordion-button collapsed px-0 py-0 fs-5 mb-0 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#cer-collapse{{ loop.index }}">
-                                                    Description
-                                                </button>
-                                            </p>
-                                            <div id="cer-collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#cer-accordion{{ loop.index }}">
-                                                <div class="accordion-body px-0 pt-2 pb-0 fs-5">
-                                                    {{certificate.description}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-
-                    <!-- Volunteer subsection -->
-                    {% if exp_data.get('volunteer') %}
-                    <h3 class="display-6 fw-normal" id="volunteer">Volunteer</h3>
-                    {% endif %}
-                    <div class="timeline fw-light py-3 my-1">
-                        {% for volunteer in exp_data['volunteer'] %}
-                        <div class="timeline-item">
-                            <div class="card hover-lift shadow-sm">
-                            <div class="card-body">
-                                <h4 class="card-title fs-3 fw-medium mb-2">
-                                    {{ volunteer.name }}
-                                </h4>
-                                <p class="card-subtitle fs-5 mb-0 fw-normal text-body-secondary">
-                                    {{ volunteer.organization }}
-                                </p>
-                                <p class="card-subtitle fs-5 mb-2 fw-normal text-body-secondary">
-                                    {{ volunteer.start_date.strftime('%Y') }}
-                                </p>
-                                    <div class="accordion accordion-flush" id="vol-accordion{{ loop.index }}">
-                                        <div class="accordion-item border-0">
-                                            <p class="accordion-header">
-                                                <button class="accordion-button collapsed px-0 py-0 fs-5 mb-0 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#vol-collapse{{ loop.index }}">
-                                                    Description
-                                                </button>
-                                            </p>
-                                            <div id="vol-collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#vol-accordion{{ loop.index }}">
-                                                <div class="accordion-body px-0 pt-2 pb-0 fs-5">
-                                                    {{ volunteer.description }}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-
-                    <!-- Other experience subsection -->
-                    {% if exp_data.get('other') %}
-                    <h3 class="display-6 fw-normal" id="oth-exp">Other</h3>
-                    {% endif %}
-                    <div class="timeline fw-light py-3 my-1">
-                        {% for other in exp_data['other'] %}
-                        <div class="timeline-item">
-                            <div class="card hover-lift shadow-sm">
-                            <div class="card-body">
-                                    <h4 class="card-title fs-3 fw-medium mb-2">
-                                        {{ other.name }}
-                                    </h4>
-                                    <p class="card-subtitle fs-5 mb-0 fw-normal text-body-secondary">
-                                        {{ other.organization }}
-                                    </p>
-                                    <p class="card-subtitle fs-5 mb-2 fw-normal text-body-secondary">
-                                        {{ other.start_date.strftime('%Y') }}
-                                    </p>
-                                    <div class="accordion accordion-flush" id="oth-accordion{{ loop.index }}">
-                                        <div class="accordion-item border-0">
-                                            <p class="accordion-header">
-                                                <button class="accordion-button collapsed px-0 py-0 fs-5 mb-0 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#oth-collapse{{ loop.index }}">
-                                                    Description
-                                                </button>
-                                            </p>
-                                            <div id="oth-collapse{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#oth-accordion{{ loop.index }}">
-                                                <div class="accordion-body px-0 pt-2 pb-0 fs-5">
-                                                    {{ other.description }}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
 
             <!-- Skills section -->
             <div class="container-fluid px-4 py-5" id="skills">
-                <h2 class="display-3 fw-normal" id="skills">Skills</h2>
-                <p  class="lead fs-3 pd-1 border-bottom">
+                <h2 class="display-5 fw-normal" id="skills">Skills</h2>
+                <p  class="lead">
                     Tools that i used to face environmental problems.
                 </p>
 
                 <!-- Skills card -->
-                {% for skill_name, skill_item in ski_data.items() %}
+                {% for skill_name, skill_item in skills.items() %}
                 <div class="container-fluid mb-5">
-                    <div class="card hover-lift shadow my-4" id="{{ skill_name | lower | replace(' ', '-') }}">
+                    <div class="card hover-lift shadow my-4" id="{{ skill_name | lower   | replace(' ', '-') }}">
                         <div class="card-header">
                             <h3 class="display-6 fw-normal">{{ skill_name }}</h3>
                         </div>
@@ -280,13 +143,13 @@
                     <h6 class="fs-4">On this Page</h6>
                     <a href="#overview" class="nav-link">Overview</a>
                     <a href="#experience" class="nav-link">Experience</a>
-                    <a href="#career" class="nav-link ms-3 my-1">Career</a>
-                    <a href="#education" class="nav-link ms-3 my-1">Education</a>
-                    <a href="#certification" class="nav-link ms-3 my-1">Certification</a>
-                    <a href="#volunteer" class="nav-link ms-3 my-1">Volunteer</a>
-                    <a href="#oth-exp" class="nav-link ms-3 my-1">Other experience</a>
+                    {% for experience in experiences %}
+                    <a href="#{{ experience.id }}" class="nav-link ms-3 my-1">
+                        {{ experience.label }}
+                    </a>
+                    {% endfor %}
                     <a href="#skills" class="nav-link">Skills</a>
-                    {% for skill_name, skill_item in ski_data.items() %}
+                    {% for skill_name, skill_item in skills.items() %}
                     <a href="#{{ skill_name | lower | replace(' ', '-') }}" class="nav-link ms-3 my-1">
                         {{ skill_name }}
                     </a>
