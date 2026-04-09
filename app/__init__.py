@@ -19,6 +19,7 @@ def create_app():
             "about.html",
             experiences = experiences, 
             skills = skills,
+            active_filter = filter_type
         )
     
     @app.route("/portfolio")

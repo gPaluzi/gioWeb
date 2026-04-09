@@ -9,26 +9,31 @@ EXPERIENCE_META = {
         'id': 'career',
         'label': 'Career',
         'highlight': 'name',
+        'period': 'interval'
     },
     'education':{
         'id': 'education',
         'label': 'Education',
-        'highlight': 'organization' 
+        'highlight': 'organization',
+        'period': 'interval'
     },
     'certification':{
         'id': 'certification',
         'label': 'Certification',
-        'highlight': 'name' 
+        'highlight': 'name',
+        'period': 'start'
     },
     'volunteer':{
         'id': 'volunteer',
         'label': 'Volunteer',
-        'highlight': 'name' 
+        'highlight': 'name',
+        'period': 'start'
     },
     'other':{
         'id': 'other',
         'label': 'Other',
-        'highlight': 'name' 
+        'highlight': 'name',
+        'period': 'start'
     }
 }
 
@@ -55,20 +60,21 @@ def generate_experience(exp_data):
     sections = []
 
     for section, meta in EXPERIENCE_META.items():
-        items = sorted(
+        data = sorted(
             exp_data.get(section, []),
             key= lambda x: x.start_date,
             reverse=True
         )
 
-        if not items:
+        if not data:
             continue
 
         sections.append({
             'id': meta['id'],
             'label': meta['label'],
             'highlight': meta['highlight'],
-            'items': items
+            'data': data,
+            'period': meta['period']
         })
 
     return sections
