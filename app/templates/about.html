@@ -25,21 +25,27 @@
                     Brief documentation about my journey.
                 </p>
 
-                <form action="/about" method="get">
-                    <select name="exp_filter" class="form-select" onchange="this.form.submit()">
-                        <option value="all" {% if active_filter == 'all' %}selected{% endif %}>
-                            All Experience
-                        </option>
-                        <option value="last5" {% if active_filter == 'last5' %}selected{% endif %}>
-                            Last 5 Years
-                        </option>
-                    </select>
-                </form>
-                
                 <!-- Experience ard template -->
-                <div class="container-fluidps-0 ps-md-3">
+                <div class="container-fluid ps-0 ps-md-3">
                     {% for experience in experiences %}
-                    <h3 id="{{experience.id}}" class="display-6 fw-normal">{{experience.label}}</h3>
+                    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                        <h3 id="{{experience.id}}" class="display-6 fw-normal mb-0">
+                            {{experience.label}}
+                        </h3>
+                        {% if loop.first %}
+                        <form action="/about" method="get" class="ms-auto">
+                            <select name="exp_filter" class="form-select" onchange="this.form.submit()">
+                                <option value="all" {% if active_filter == 'all' %}selected{% endif %}>
+                                    All Experience
+                                </option>
+                                <option value="last5" {% if active_filter == 'last5' %}selected{% endif %}>
+                                    Last 5 Years
+                                </option>
+                            </select>
+                        </form>
+                        {% endif %}
+                    </div>
+
                     <div class="timeline fw-light py-3 my-1">
                             {% for item in experience.data %}
                             <div class="timeline-item">
