@@ -9,7 +9,7 @@ class Config():
 
 class ProductionConfig(Config):
     DEBUG = False
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL', 'sqlite:///tmp/app.db')
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL', 'sqlite:///app.db')
 
 class DevelopmentConfig(Config):
     DEBUG = True
