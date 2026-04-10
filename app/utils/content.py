@@ -2,7 +2,6 @@ from datetime import date
 from sqlalchemy import select
 from collections import defaultdict
 from ..models import Experience, Skill
-from ..database import db_session
 
 EXPERIENCE_META = {
     'career':{
@@ -38,6 +37,8 @@ EXPERIENCE_META = {
 }
 
 def get_experience(filter_type):
+    from ..database import db_session
+
     date_now = date.today()
 
     query = select(Experience)
@@ -80,6 +81,7 @@ def generate_experience(exp_data):
     return sections
 
 def generate_skills():
+    from ..database import db_session
     
     query = select(Skill).join(Skill.category)
     result = db_session.execute(query).scalars()

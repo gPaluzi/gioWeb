@@ -1,8 +1,12 @@
+import os
 import json
+from app import create_app
 from app.database import db_session, init_db
 from app.models import Experience, SkillCategory, Skill
 
+
 def seed(reset: bool=False):
+
     session = db_session
 
     # db reset
@@ -12,7 +16,9 @@ def seed(reset: bool=False):
         session.query(Experience).delete()
         session.commit()
 
-    with open('./app/data/data.json') as f:
+    BASE_DIR = os.path.dirname(__file__)
+    data_path = os.path.join(BASE_DIR, 'app', 'data', 'data.json')
+    with open(data_path) as f:
         data = json.load(f)
 
     categories = {}
@@ -42,6 +48,7 @@ def seed(reset: bool=False):
     session.close()
 
 if __name__ == '__main__':
+    app = create_app()
     init_db()
     seed(True)
     db_session.remove()
