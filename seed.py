@@ -50,5 +50,11 @@ def seed(reset: bool=False):
 if __name__ == '__main__':
     app = create_app()
     init_db()
-    seed(True)
+
+    try:
+        seed(True)
+    except Exception as e:
+        print(f'Seed failed: {e}')
+
+
     db_session.remove()

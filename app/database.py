@@ -4,7 +4,7 @@ from sqlalchemy.orm import scoped_session, sessionmaker, declarative_base
 
 SQLALCHEMY_DATABASE_URL = os.environ.get(
     'DATABASE_URL',
-    'sqlite3:///instance/app.db'
+    'sqlite:///instance/app.db'
 )
 
 engine = None
