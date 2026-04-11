@@ -49,10 +49,11 @@ def seed(reset: bool=False):
 
 if __name__ == '__main__':
     app = create_app()
-    init_db()
 
     try:
-        seed(True)
+        with app.app_context():
+            seed(True)
+            
     except Exception as e:
         print(f'Seed failed: {e}')
 
