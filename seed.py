@@ -49,6 +49,7 @@ def seed(reset: bool=False):
 
 if __name__ == '__main__':
     app = create_app()
+    print("DB URI:", app.config['SQLALCHEMY_DATABASE_URI'])
 
     try:
         with app.app_context():
