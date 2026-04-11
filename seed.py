@@ -1,13 +1,12 @@
 import os
 import json
-from app import create_app
-from app.database import db_session, init_db
+from app import create_app, database
 from app.models import Experience, SkillCategory, Skill
 
 
 def seed(reset: bool=False):
 
-    session = db_session
+    session = database.db_session
 
     # db reset
     if reset is True:
@@ -58,5 +57,4 @@ if __name__ == '__main__':
     except Exception as e:
         print(f'Seed failed: {e}')
 
-
-    db_session.remove()
+    database.db_session.remove()
