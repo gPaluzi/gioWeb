@@ -1,10 +1,25 @@
 {
     "experience": [
         {
+            "name": "Python Boothcamp for Spatial Data Analysis",
+            "category": "Certification",
+            "organization": "GeoAccess Indonesia",
+            "start_date": "2024-12-01",
+            "end_date": "2023-12-31",
+            "description": "Completed an one-month (20-hour) certification focused in automation of geoprocessing tasks. This program emphasized the use of specialized libraries to manipulate vector and raster data, bridging between programming logic and geographic information system."
+        },        {
+            "name": "Database Assistant",
+            "category": "Career",
+            "organization": "SINTAS Indonesia",
+            "start_date": "2023-02-01",
+            "end_date": "2023-05-31",
+            "description": "Maintained databases for camera trap survey data using CameraBase, specializing in the identification and management of wildlife records to ensure data integrity for long-term population monitoring. This role represent my first engagement with complex, real-world datasets, requiring translation of raw field observation into analytical frameworks."
+        },
+        {
             "name": "GIS Officer",
             "category": "Career",
-            "organization": "Sintas Indonesia",
-            "start_date": "2023-01-01",
+            "organization": "SINTAS Indonesia",
+            "start_date": "2024-07-01",
             "end_date": null,
             "description": "Managed the GIS workflow, providing spatial analysis and mapping support across the organization project rosters. I focused on stramlining data management processes and delivering technical geospatial solutions for wildlife conservation. This position required a deep integration of spatial data and environmental field realities."
         },
