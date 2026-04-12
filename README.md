@@ -16,6 +16,7 @@ Recently deployed on [Render.com](https://gioweb.onrender.com/).
 
 
 ### Backends
+- Add error handling in seed.py
 - Add advanced filtering in aboutme sections
 - Add portofolios data model, *make sure have FK to skills table*.
 - Add more routes for portfolios
