@@ -1,5 +1,29 @@
 {
-    "experience": [     
+    "experience": [
+        {
+            "name": "Training GPS Collar",
+            "category": "Other",
+            "organization": "Freelance",
+            "start_date": "2025-09-22",
+            "end_date": "2025-09-24",
+            "description": "Acted as a technical trainee and supervisor for GPS Collar Deploymen in JAAN (Jakarta Animal Aid Network), overseeing the hardware installation process for wildlife during soft-release operations. I was responsible for ensuring contact device configuration and deployment and remote data acquisition systems."
+        },
+        {
+            "name": "SMART Patrol Training Assistance",
+            "category": "Other",
+            "organization": "Freelance",
+            "start_date": "2026-02-02",
+            "end_date": "2026-02-04",
+            "description": "Facilitated technical training for a Sinar Mas subsidiary on the implementation of SMART (Spatial Monitoring and Reporting Tool) platform, covering desktop architechture, data model configuration, and mobile field integration. Additionally, provided a technical introduction to Global Forest Watch (GFW) platform to streamline deforestation alert workflows and real-time landscape monitoring."
+        },
+        {
+            "name": "Technical Field Logistics and Methodology Training",
+            "category": "Other",
+            "organization": "SINTAS Indonesia",
+            "start_date": "2025-08-28",
+            "end_date": "2025-08-31",
+            "description": "Coordinated internal training modules on fundamentals wildlife survey methodologies, including camera trapping, bioaccoustics, line transects, and point count. I managed logistics and for all participants, ensuring that essential field equipment and land navigation tools were correctly configured and deployed for practical instructional use."
+        },        
         {
             "name": "Python Boothcamp for Spatial Data Analysis",
             "category": "Certification",
