@@ -1,12 +1,20 @@
 {
     "experience": [
         {
-            "name": "Training GPS Collar",
+            "name": "GPS Collar Trainer",
+            "category": "Other",
+            "organization": "SINTAS Indonesia",
+            "start_date": "2026-04-17",
+            "end_date": "2026-04-17",
+            "description": "Facilitated one-day technical introduction to GPS Collar deployment in Meru Betiri National Park. Deliver key-concept of GPS Collar mechanism and how to deploy it safely to terrestrial animals. Moreover, demonstrating gps collar testing protocol and retrieval methods.s"
+        },
+        {
+            "name": "GPS Collar Deployment Supervisor",
             "category": "Other",
             "organization": "Freelance",
             "start_date": "2025-09-22",
             "end_date": "2025-09-24",
-            "description": "Acted as a technical trainee and supervisor for GPS Collar Deploymen in JAAN (Jakarta Animal Aid Network), overseeing the hardware installation process for wildlife during soft-release operations. I was responsible for ensuring contact device configuration and deployment and remote data acquisition systems."
+            "description": "Acted as a technical trainee and supervisor for GPS Collar Deployment in JAAN (Jakarta Animal Aid Network), overseeing the hardware installation process for wildlife during soft-release operations. I was responsible for ensuring contact device configuration and deployment and remote data acquisition systems."
         },
         {
             "name": "SMART Patrol Training Assistance",

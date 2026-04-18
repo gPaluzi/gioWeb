@@ -47,30 +47,32 @@
                     </div>
 
                     <div class="timeline fw-light py-3 my-1">
-                            {% for item in experience.data %}
+                            {% for data in experience.data %}
                             <div class="timeline-item">
                                 <div class="card hover-lift shadow-sm">
                                     <div class="card-body">
+                                        <!-- Highlight logic -->
                                         {% if experience.highlight == 'organization' %}
                                         <h4 class="card-title fs-3 fw-medium mb-2">
-                                            {{ item.organization }}
+                                            {{ data.data.organization }}
                                         </h4>
                                         <p class="card-subtitle fs-5 mb-2 fw-normal text-body-secondary">
-                                            {{ item.name}}
+                                            {{ data.data.name}}
                                         </p>
                                         {% else %}
-                                        <h4 class="card-title fs-3 fw-medium mb-2">{{ item.name }}</h4>
+                                        <h4 class="card-title fs-3 fw-medium mb-2">{{ data.data.name }}</h4>
                                         <p class="card-subtitle fs-5 mb-2 fw-normal text-body-secondary">
-                                            {{ item.organization}}
+                                            {{ data.data.organization}}
                                         </p>
                                         {% endif %}
-                                        {% if experience.period == 'interval' %}
+
+                                        <!-- Date logic -->
                                         <p class="card-subtitle fs-5 mb-2 fw-normal text-body-secondary">
-                                            {{ item.start_date.strftime('%Y') }} - {{ item.end_date.strftime('%Y') if item.end_date else 'Present' }}
-                                        </p>
+                                        {% if data.year_only %}
+                                            {{ data.data.start_date.strftime('%Y') }} - 
+                                            {{ data.data.end_date.strftime('%Y') if data.data.end_date else 'Present'}}
                                         {% else %}
-                                        <p class="card-subtitle fs-5 mb-2 fw-normal text-body-secondary">
-                                            {{ item.start_date.strftime('%Y') }}
+                                            {{ data.data.start_date.strftime('%b %Y') }} - {{ data.data.end_date.strftime('%b %Y') if data.data.end_date else 'Present' }}
                                         </p>
                                         {% endif %}
                                         <div class="accordion accordion-flush" id="accordion-{{ experience.label }}-{{ loop.index }}">
@@ -81,7 +83,7 @@
                                                     </button>
                                                 </p>
                                                 <div class="accordion-collapse collapse" id="collapse-{{ experience.label }}-{{ loop.index }}" data-bs-parent="#accordion-{{ experience.label }}-{{ loop.index }}">
-                                                    {{ item.description }}
+                                                    {{ data.data.description }}
                                                 </div>
                                             </div>
                                         </div>

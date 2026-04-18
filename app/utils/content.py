@@ -8,35 +8,30 @@ EXPERIENCE_META = {
         'id': 'career',
         'label': 'Career',
         'highlight': 'name',
-        'period': 'interval'
     },
     'education':{
         'id': 'education',
         'label': 'Education',
         'highlight': 'organization',
-        'period': 'interval'
     },
     'certification':{
         'id': 'certification',
         'label': 'Certification',
         'highlight': 'name',
-        'period': 'start'
     },
     'volunteer':{
         'id': 'volunteer',
         'label': 'Volunteer',
         'highlight': 'name',
-        'period': 'start'
     },
     'other':{
         'id': 'other',
         'label': 'Other',
         'highlight': 'name',
-        'period': 'start'
     }
 }
 
-def get_experience(filter_type):
+def get_experience(filter_type)-> defaultdict:
     from ..database import db_session
 
     date_now = date.today()
@@ -56,31 +51,45 @@ def get_experience(filter_type):
         grouped[item.category].append(item)
 
     return grouped
+
+def is_year_only(start_date:date, end_date:date)-> bool:
+    if not end_date:
+        end_date = date.today()
+
+    delta = end_date - start_date
     
-def generate_experience(exp_data):
+    return abs(delta.days) > 365
+    
+def generate_experience(exp_data)-> list:
     sections = []
 
     for section, meta in EXPERIENCE_META.items():
-        data = sorted(
+        sorted_data = sorted(
             exp_data.get(section, []),
             key= lambda x: x.start_date,
             reverse=True
         )
 
-        if not data:
+        if not sorted_data:
             continue
+        
+        data_meta = []
+        for data in sorted_data:
+            data_meta.append({
+                'data': data,
+                'year_only': is_year_only(data.start_date, data.end_date)
+            })
 
         sections.append({
             'id': meta['id'],
             'label': meta['label'],
             'highlight': meta['highlight'],
-            'data': data,
-            'period': meta['period']
+            'data': data_meta,
         })
 
     return sections
 
-def generate_skills():
+def generate_skills()->defaultdict:
     from ..database import db_session
     
     query = select(Skill).join(Skill.category)
