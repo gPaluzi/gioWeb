@@ -68,11 +68,14 @@
 
                                         <!-- Date logic -->
                                         <p class="card-subtitle fs-5 mb-2 fw-normal text-body-secondary">
-                                        {% if data.year_only %}
-                                            {{ data.data.start_date.strftime('%Y') }} - 
-                                            {{ data.data.end_date.strftime('%Y') if data.data.end_date else 'Present'}}
-                                        {% else %}
-                                            {{ data.data.start_date.strftime('%b %Y') }} - {{ data.data.end_date.strftime('%b %Y') if data.data.end_date else 'Present' }}
+                                            {% if data.period_format == 'year_interval' %}
+                                                {{ data.data.start_date.strftime('%Y') }} - 
+                                                {{ data.data.end_date.strftime('%Y') if data.data.end_date else 'Present'}}
+                                            {% elif data.period_format == 'month_interval' %}
+                                                {{ data.data.start_date.strftime('%b %Y') }} - 
+                                                {{ data.data.end_date.strftime('%b %Y') if data.data.end_date else 'Present' }}
+                                            {% else %}
+                                                {{ data.data.start_date.strftime('%b %Y') }}
                                         </p>
                                         {% endif %}
                                         <div class="accordion accordion-flush" id="accordion-{{ experience.label }}-{{ loop.index }}">

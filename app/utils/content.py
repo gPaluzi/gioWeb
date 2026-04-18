@@ -52,13 +52,21 @@ def get_experience(filter_type)-> defaultdict:
 
     return grouped
 
-def is_year_only(start_date:date, end_date:date)-> bool:
+def get_period_format(start_date:date, end_date:date)-> str:
     if not end_date:
         end_date = date.today()
 
     delta = end_date - start_date
+    day_delta = abs(delta.days)
+
+    if day_delta > 365:
+        return 'year_interval'
     
-    return abs(delta.days) > 365
+    elif day_delta < 30:
+        return 'month_only'
+    else:
+        return 'month_interval'
+    
     
 def generate_experience(exp_data)-> list:
     sections = []
@@ -77,7 +85,7 @@ def generate_experience(exp_data)-> list:
         for data in sorted_data:
             data_meta.append({
                 'data': data,
-                'year_only': is_year_only(data.start_date, data.end_date)
+                'period_format': get_period_format(data.start_date, data.end_date)
             })
 
         sections.append({
