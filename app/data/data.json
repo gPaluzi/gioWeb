@@ -44,8 +44,8 @@
             "name": "Database Assistant",
             "category": "Career",
             "organization": "SINTAS Indonesia",
-            "start_date": "2023-02-01",
-            "end_date": "2023-05-31",
+            "start_date": "2024-02-01",
+            "end_date": "2024-05-31",
             "description": "Maintained databases for camera trap survey data using CameraBase, specializing in the identification and management of wildlife records to ensure data integrity for long-term population monitoring. This role represent my first engagement with complex, real-world datasets, requiring translation of raw field observation into analytical frameworks."
         },
         {
@@ -60,8 +60,8 @@
             "name": "Biodiversity Surveyor",
             "category": "Career",
             "organization": "Mangrove Jakarta",
-            "start_date": "2022-12-01",
-            "end_date": "2023-01-30",
+            "start_date": "2023-12-01",
+            "end_date": "2024-01-30",
             "description": "Executed HCV Biodiversity surveys in mangrove habitats, targeting avian and herpeotfauna biodiversity. I performed technical assessment of ecosystem stability using Mangrove Health Index by remote sensing approach. This role translating field observations into environmental health report."
         },
         {
@@ -84,16 +84,16 @@
             "name": "Scientific Computing with Python",
             "category": "Certification",
             "organization": "freeCodeCamp",
-            "start_date": "2024-05-01",
-            "end_date": null,
+            "start_date": "2023-08-01",
+            "end_date": "2024-07-09",
             "description": "The 300-hours curriculum involved basic foundation in python and computer science serve as foundation to solve a problem in computer viewpoint. Solve a minimum five mini-project to achieve the certification. The certification represents a formal transition to data-driven development."
         },
         {
             "name": "Legacy Responsive Web Design v8",
             "category": "Certification",
             "organization": "freeCodeCamp",
-            "start_date": "2025-05-01",
-            "end_date": null,
+            "start_date": "2025-04-15",
+            "end_date": "2025-05-01",
             "description": "The 300-hours curriculum involved basic foundation of buuilding user-friendly, accessible web applications. Solve a minimum five mini-project to achieve the certification. This ensure my technical tools are not only functional but also intuitive to end-users."
         },
         {
