@@ -36,5 +36,9 @@ def create_app():
     @app.route("/portfolio")
     def portfolio():
         return render_template("portfolio.html")
+    
+    @app.route('/portfolio/flask-app')
+    def first_portfolio():
+        return('Hello world')
 
     return app

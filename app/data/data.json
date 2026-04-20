@@ -36,7 +36,7 @@
             "name": "Python Boothcamp for Spatial Data Analysis",
             "category": "Certification",
             "organization": "GeoAccess Indonesia",
-            "start_date": "2024-12-01",
+            "start_date": "2024-12-10",
             "end_date": "2024-12-31",
             "description": "Completed an one-month (20-hour) certification focused in automation of geoprocessing tasks. This program emphasized the use of specialized libraries to manipulate vector and raster data, bridging between programming logic and geographic information system."
         },        
@@ -84,7 +84,7 @@
             "name": "Scientific Computing with Python",
             "category": "Certification",
             "organization": "freeCodeCamp",
-            "start_date": "2023-08-01",
+            "start_date": "2024-07-01",
             "end_date": "2024-07-09",
             "description": "The 300-hours curriculum involved basic foundation in python and computer science serve as foundation to solve a problem in computer viewpoint. Solve a minimum five mini-project to achieve the certification. The certification represents a formal transition to data-driven development."
         },
