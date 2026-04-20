@@ -10,8 +10,6 @@ Recently deployed on [Render.com](https://gioweb.onrender.com/).
 - AboutMe: Add more skills
 
 ### Frontends
-- Aboutme: fix experience periods display
-- Portfolios: make the card clickable
 - Create html templates for portfolio presentations
 
 
@@ -19,5 +17,5 @@ Recently deployed on [Render.com](https://gioweb.onrender.com/).
 - Add error handling in seed.py
 - Add advanced filtering in aboutme sections
 - Add portofolios data model, *make sure have FK to skills table*.
-- Add more routes for portfolios
+- Add dynamic routes for more portfolios
 - Use flask blueprints if things start messy
