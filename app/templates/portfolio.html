@@ -25,7 +25,7 @@
                     <h2 class="card-title">Personal Portofolio</h2>
                     <a 
                     href="#" 
-                    class="card-text stretched-link text-decoration-none text-reset" 
+                    class="card-text stretched-link text-decoration-none text-reset project-link"
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal">
                         Flask-based platform as a container of my works.
@@ -36,14 +36,16 @@
     </div>
 </div>
 <div class="modal fade" id="exampleModal" role="dialog">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h5>Modal Title</h5>
-                <a href="{{ url_for('portfolio') }}" class="btn-close"></a>
+                <h5>Personal Portfolio</h5>
+                <a href="{{ url_for('portfolio') }}" class="btn-close" data-bs-dismiss="modal"></a>
             </div>
             <div class="modal-body">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
             </div>
         </div>
     </div>
