@@ -119,3 +119,19 @@ class Skill(Base):
 
     def __repr__(self):
         return f'<{self.name}> at {self.level} level'
+    
+class ProjectSkill(Base):
+    pass
+    
+class Projects(Base):
+    __tablename__ = 'projects'
+
+    id = Column(Integer, primary_key=True)
+    title = Column(String, nullable=False)
+    slug = Column(String, nullable=False, unique=True)
+    tagline = Column(String, nullable=False)
+    content = Column(String)
+    thumbnail_url = Column(String, nullable=False)
+    start_date = Column(Date)
+
+    skills = relationship('Skills', backref='projects', lazy='joined')
