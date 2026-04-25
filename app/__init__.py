@@ -27,7 +27,7 @@ def create_app():
         skills = generate_skills()
 
         return render_template(
-            "about.html",
+            'about.html',
             experiences = experiences, 
             skills = skills,
             active_filter = filter_type
@@ -35,10 +35,10 @@ def create_app():
     
     @app.route("/portfolio")
     def portfolio():
-        return render_template("portfolio.html")
+        return render_template('portfolio.html')
     
-    @app.route('/portfolio/<int:number>')
-    def projects(number):
-        return(f'Hello world! this is page {number}')
-
+    # @app.route('/portfolio/<slug>')
+    # def projects(slug):
+    #     return render_template('portfolio.html', slug=slug)
+    
     return app

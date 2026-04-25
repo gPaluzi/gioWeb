@@ -6,24 +6,89 @@
                 <a href="{{ url_for('portfolio') }}" class="btn-close" data-bs-dismiss="modal"></a>
             </div>
             <div class="modal-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+                <div class="ratio ratio-21x9">
+                    <img 
+                    src="https://cdn.pixabay.com/photo/2014/01/16/09/00/operating-system-246242_1280.jpg"
+                    alt="code-hero"
+                    class="img-fluid w-100 object-fit-cover">
+                </div>
+                <div class="p-2 py-md-4">
+                    <p>Python utility to summarize camera trap metadata</p>
+                    <div class="mb-2 mb-md-4">
+                        <a 
+                        href="https://github.com/gPaluzi/meta-summarizer" 
+                        class="btn btn-dark" role="button"
+                        target="_blank">
+                            GitHub
+                        </a>
+                    </div>
+                    <h6>Overview</h6>
+                    <p>
+                        Developed to solve a bottleneck issue in wildlife field monitoring.
+                        This Python-based utility automates the extraction and organization of metadata from large-scale camera trap surveys.
+                        What was once a manual, time-consuming process is now streamlied that converts thousands of raw images into a structured metadata datasets.
+                    </p>
+                </div>
             </div>
+
         </div>
     </div>
 </div>
 <div class="modal fade" id="exampleModal2" role="dialog">
-    <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
                 <h5>Personal Portfolio</h5>
                 <a href="{{ url_for('portfolio') }}" class="btn-close" data-bs-dismiss="modal"></a>
             </div>
             <div class="modal-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+                <div class="ratio ratio-21x9">
+                    <img 
+                    src="https://cdn.pixabay.com/photo/2015/10/27/14/40/programming-1009134_1280.jpg"
+                    alt="code-hero"
+                    class="img-fluid w-100 object-fit-cover">
+                </div>
+                <div class="p-2 py-md-4">
+                    <p>Flask-based platform as a container of my works</p>
+                    <div class="mb-2 mb-md-4">
+                        <a 
+                        href="https://gioweb.onrender.com/" 
+                        class="btn btn-dark" role="button"
+                        target="_blank">
+                            Link
+                        </a>
+                        <a 
+                        href="https://github.com/gPaluzi/gioWeb" 
+                        class="btn btn-dark" role="button"
+                        target="_blank">
+                            GitHub
+                        </a>
+                    </div>
+                    <h6>Overview</h6>
+                    <p>
+                        The project originated from a need for centralized 'single-source' for my personal identity, a platform that reflecting my journey as a whole.
+                        Functioning as a live 'patch log' to document my growth.
+                        This is actually my first flask application.
+                        The development process idea is just start simple and refactor for complexity later.
+                    </p>
+                    <h6>Details</h6>
+                    <p>
+                        Build on Flask (Python) micro-framework, utilizing a modular routing system to handle dynamic content delivery.
+                        The application follow 'Logic-first' design, prioritizing server-side stability and clean data structure before scaling to complex database integration.
+                        By building from scratch, I am learning the manual orchestration of routing logic and server-side state management.
+                    </p>
+                    <p>
+                        Jinja2 template engine is used to inject structured data into html templates instead of hardcoding every pages.
+                        This teaches me how to deliver back-end Python logic into front-end presentation.
+                    </p>
+                    <p>
+                        Data entries are stored in json and seeded into SQLite, miroring the real-world database design.
+                        SQLAlchemy is used as Object Relational Mapper (ORM) to map each stored data into Python Objects.
+                    </p>
+                    <p>
+                        The UI is utilizing CSS Bootstrap with slight custom css to make a clean and tidy look.
+                    </p>
+                </div>
             </div>
         </div>
     </div>

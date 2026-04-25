@@ -1,5 +1,5 @@
 from datetime import date, datetime
-from sqlalchemy import Column, Integer, String, Date, ForeignKey
+from sqlalchemy import Column, Integer, String, Text, Date, ForeignKey
 from sqlalchemy.orm import relationship
 from .database import Base
 
@@ -120,18 +120,20 @@ class Skill(Base):
     def __repr__(self):
         return f'<{self.name}> at {self.level} level'
     
-class ProjectSkill(Base):
-    pass
+# class ProjectSkill(Base):
+#     pass
     
-class Projects(Base):
-    __tablename__ = 'projects'
+# class Projects(Base):
+#     __tablename__ = 'projects'
 
-    id = Column(Integer, primary_key=True)
-    title = Column(String, nullable=False)
-    slug = Column(String, nullable=False, unique=True)
-    tagline = Column(String, nullable=False)
-    content = Column(String)
-    thumbnail_url = Column(String, nullable=False)
-    start_date = Column(Date)
+#     id = Column(Integer, primary_key=True)
+#     title = Column(String, nullable=False)
+#     slug = Column(String, nullable=False, unique=True)
+#     tagline = Column(String, nullable=False)
+#     overview = Column(Text)
+#     feature = Column(Text)
+#     lesson = Column(Text)
+#     thumbnail_url = Column(String, nullable=False)
+#     start_date = Column(Date)
 
-    skills = relationship('Skills', backref='projects', lazy='joined')
+#     skills = relationship('Skills', backref='projects', lazy='joined')
