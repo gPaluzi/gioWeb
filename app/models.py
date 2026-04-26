@@ -120,20 +120,53 @@ class Skill(Base):
     def __repr__(self):
         return f'<{self.name}> at {self.level} level'
     
-# class ProjectSkill(Base):
-#     pass
-    
-# class Projects(Base):
-#     __tablename__ = 'projects'
+class Project(Base):
+    __tablename__ = 'projects'
 
-#     id = Column(Integer, primary_key=True)
-#     title = Column(String, nullable=False)
-#     slug = Column(String, nullable=False, unique=True)
-#     tagline = Column(String, nullable=False)
-#     overview = Column(Text)
-#     feature = Column(Text)
-#     lesson = Column(Text)
-#     thumbnail_url = Column(String, nullable=False)
-#     start_date = Column(Date)
+    id = Column(Integer, primary_key=True)
+    title = Column(String, nullable=False)
+    slug = Column(String, nullable=False, unique=True)
+    tagline = Column(String(72), nullable=False)
+    thumbnail_url = Column(String, nullable=False)
+    thumbnail_alt = Column(String, nullable=False)
+    hero_url = Column(String)
+    hero_alt = Column(String)
+    content = Column(Text)
+    start_date = Column(Date)
 
-#     skills = relationship('Skills', backref='projects', lazy='joined')
+    def __init__( self, 
+            title,
+            slug,
+            tagline,
+            thumbnail_url,
+            thumbnail_alt,
+            start_date: date,
+            hero_url=None,
+            hero_alt=None,
+            content:str=None
+            ):
+        self.title = title
+        self.slug = slug
+        self.tagline = tagline
+        self.thumbnail_url = thumbnail_url
+        self.thumbnail_alt = thumbnail_alt
+        self.hero_url = hero_url
+        self.hero_alt = hero_alt
+        self.start_date = self.validate_date(start_date)
+        self.content = content
+
+    @classmethod
+    def validate_date(cls, value: str | date)-> date:
+        if isinstance(value, str):
+            try:
+                return datetime.strptime(value, '%Y-%m-%d').date()
+            except ValueError:
+                raise ValueError(f'start_date does not match "YYYY-MM-DD" format')
+
+        elif isinstance(value, date):
+            return value
+        else:
+            raise TypeError(f'start_date must be a str or datetime.date, got {type(value).__name__}')
+
+    def __repr__(self):
+        return f'<Title: {self.title}>'

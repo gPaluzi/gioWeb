@@ -3,6 +3,7 @@ title: Personal Portfolio
 slug: personal-portfolio
 tagline: Flask-based platform as a container of my works.
 thumbnail_url: https://cdn.pixabay.com/photo/2018/02/22/18/21/laptop-3173613_1280.png
+thumbnail_alt: computer
 hero_url: https://cdn.pixabay.com/photo/2015/10/27/14/40/programming-1009134_1280.jpg
 hero_alt: terminal-hero
 start_date: 2026-01-03
