@@ -35,10 +35,8 @@ def create_app():
     
     @app.route("/portfolio")
     def portfolio():
-        return render_template('portfolio.html')
-    
-    # @app.route('/portfolio/<slug>')
-    # def projects(slug):
-    #     return render_template('portfolio.html', slug=slug)
+        projects = get_projects()
+
+        return render_template('portfolio.html', projects=projects)
     
     return app

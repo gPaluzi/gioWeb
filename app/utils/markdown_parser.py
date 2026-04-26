@@ -13,4 +13,3 @@ def parse_md(path: str | Path):
         'content': post.content,
         'html': html
     }
-    

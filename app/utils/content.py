@@ -1,8 +1,7 @@
 from datetime import date
 from sqlalchemy import select
 from collections import defaultdict
-import markdown
-from ..models import Experience, Skill
+from .markdown_parser import parse_md
 
 EXPERIENCE_META = {
     'career':{
@@ -34,6 +33,7 @@ EXPERIENCE_META = {
 
 def get_experience(filter_type)-> defaultdict:
     from ..database import db_session
+    from ..models import Experience
 
     date_now = date.today()
 
@@ -100,6 +100,7 @@ def generate_experience(exp_data)-> list:
 
 def generate_skills()->defaultdict:
     from ..database import db_session
+    from ..models import Skill
     
     query = select(Skill).join(Skill.category)
     result = db_session.execute(query).scalars()
@@ -109,3 +110,11 @@ def generate_skills()->defaultdict:
         grouped[item.category.name].append(item)
 
     return grouped
+
+def get_projects():
+    from ..database import db_session
+    from ..models import Project
+
+    result = db_session.query(Project).all()
+    
+    return result
