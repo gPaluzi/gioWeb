@@ -17,7 +17,6 @@ Recently deployed on [Render.com](https://gioweb.onrender.com/).
 ### Backends
 - Add error handling in seed.py
 - Add advanced filtering in aboutme sections
-- Add portofolios data model, *make sure have FK to skills table*
-- Modify seed.py to handle md file in portfolio content
+- Add Skill FK to Project
 - Sanitize the html from markdown before seeded to db
 - Use flask blueprints if things start messy
