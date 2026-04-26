@@ -156,17 +156,17 @@ class Project(Base):
         self.content = content
 
     @classmethod
-    def validate_date(cls, value: str | date)-> date:
+    def validate_date(cls, value: str | date | datetime)-> date:
         if isinstance(value, str):
-            try:
-                return datetime.strptime(value, '%Y-%m-%d').date()
-            except ValueError:
-                raise ValueError(f'start_date does not match "YYYY-MM-DD" format')
+            return datetime.strptime(value, '%Y-%m-%d').date()
 
-        elif isinstance(value, date):
+        if isinstance(value, datetime):
+            return value.date()
+
+        if isinstance(value, date):
             return value
-        else:
-            raise TypeError(f'start_date must be a str or datetime.date, got {type(value).__name__}')
+        
+        raise TypeError(f'start_date must be a str, datetime.datetime, or datetime.date, got {type(value).__name__}')
 
     def __repr__(self):
         return f'<Title: {self.title}>'

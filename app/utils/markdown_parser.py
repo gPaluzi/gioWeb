@@ -1,11 +1,16 @@
 import markdown
 import frontmatter
+from pathlib import Path
 
-def parse_md(path):
-    with open(path, 'r', encoding='utf-8') as file:
-        return markdown.markdown(file.read())
+def parse_md(path: str | Path):
+    path = Path(path) if isinstance(path, str) else path
+
+    post = frontmatter.load(path)
+    html = markdown.markdown(post.content)
+
+    return {
+        'metadata': post.metadata,
+        'content': post.content,
+        'html': html
+    }
     
-def get_yaml(path):
-    with open(path, 'r') as file:
-        data = frontmatter.load(file)
-    return data.metadata

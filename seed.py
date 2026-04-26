@@ -1,23 +1,51 @@
-import os
+from pathlib import Path
 import json
 from app import create_app, database
-from app.models import Experience, SkillCategory, Skill
+from app.database import Base
+from app.utils.markdown_parser import parse_md
+from app.models import Experience, SkillCategory, Skill, Project
 
-
-def seed(reset: bool=False):
-
+def seed_markdown():
     session = database.db_session
 
-    # db reset
-    if reset is True:
-        session.query(Skill).delete()
-        session.query(SkillCategory).delete()
-        session.query(Experience).delete()
-        session.commit()
+    BASE_DIR = Path(__file__).resolve().parent
+    md_dir = BASE_DIR / 'app' / 'data' / 'markdown'
 
-    BASE_DIR = os.path.dirname(__file__)
-    data_path = os.path.join(BASE_DIR, 'app', 'data', 'data.json')
-    with open(data_path) as f:
+    for md_path in md_dir.glob('*.md'):
+
+        data = parse_md(md_path)
+
+        meta = data['metadata']
+        content = data['content']
+
+        
+        project = Project(
+            title=meta['title'],
+            slug=meta['slug'],
+            tagline=meta['tagline'],
+            thumbnail_url=meta['thumbnail_url'],
+            thumbnail_alt=meta['thumbnail_alt'],
+            hero_url=meta.get('hero_url'),
+            hero_alt=meta.get('hero_alt'),
+            start_date=meta['start_date'],
+            content=content
+        )
+
+        session.add(project)
+        
+        existing = session.query(Project).filter_by(slug=meta["slug"]).first()
+        if existing:
+            print(f"Skipping existing project: {meta['slug']}")
+            continue
+
+    session.commit()
+
+def seed_json():
+    session = database.db_session
+
+    BASE_DIR = Path(__file__).resolve().parent
+    json_path = BASE_DIR / 'app' / 'data' / 'data.json'
+    with open(json_path) as f:
         data = json.load(f)
 
     categories = {}
@@ -44,6 +72,21 @@ def seed(reset: bool=False):
         session.add(exp)
 
     session.commit()
+
+def reset_db():
+    engine = database.engine
+    Base.metadata.drop_all(bind=engine)
+    Base.metadata.create_all(bind=engine)
+
+def seed(reset: bool=False):
+    session = database.db_session
+
+    if reset:
+        reset_db()
+
+    seed_json()
+    seed_markdown()
+
     session.close()
 
 if __name__ == '__main__':

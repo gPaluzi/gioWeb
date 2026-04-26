@@ -1,6 +1,7 @@
 from datetime import date
 from sqlalchemy import select
 from collections import defaultdict
+import markdown
 from ..models import Experience, Skill
 
 EXPERIENCE_META = {
