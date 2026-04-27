@@ -37,7 +37,7 @@
 /* floating action button */
 .fab {
     position: fixed;
-    right: 20px;
+    right: 15px;
     bottom: calc(20px + env(safe-area-inset-bottom));
 
     z-index: 1;
