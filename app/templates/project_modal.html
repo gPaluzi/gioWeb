@@ -1,3 +1,28 @@
+{% for project in projects %}
+<div class="modal modal-fade" id="{{ project.slug }}" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1>
+                    {{ project.title }}
+                </h1>
+                <a href="{{ url_for('portfolio') }}" class="btn-close" data-bs-dismiss="modal"></a>
+            </div>
+            <div class="modal-body">
+                {% if project.hero_url %}
+                <div class="ratio ratio-21x9">
+                    <img 
+                    src="{{ project.hero_url }}" 
+                    alt="{{ project.hero_alt }}"
+                    class="img-fluid w-100 object-fit-cover">
+                </div>
+                {% endif %}
+                <div class="p-2 py-md-4"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
 <div class="modal fade" id="exampleModal1" role="dialog">
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content">
