@@ -23,20 +23,22 @@ def seed_markdown():
             title=meta['title'],
             slug=meta['slug'],
             tagline=meta['tagline'],
-            thumbnail_url=meta['thumbnail_url'],
-            thumbnail_alt=meta['thumbnail_alt'],
-            hero_url=meta.get('hero_url'),
-            hero_alt=meta.get('hero_alt'),
+            thumbnail_url=meta['thumbnail']['url'],
+            thumbnail_alt=meta['thumbnail']['alt'],
+            hero_url=meta.get('hero', {}).get('url'),
+            hero_alt=meta.get('hero', {}).get('alt'),
             start_date=meta['start_date'],
-            content=content
+            content=content,
+            links=meta.get('links', [])
         )
 
-        session.add(project)
-        
         existing = session.query(Project).filter_by(slug=meta["slug"]).first()
         if existing:
             print(f"Skipping existing project: {meta['slug']}")
             continue
+
+        session.add(project)
+        
 
     session.commit()
 
