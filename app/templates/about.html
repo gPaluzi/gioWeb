@@ -141,24 +141,60 @@
             </div>
         </div>
 
+        
         <!-- Table of content -->
+        <button 
+        class="btn btn-secondary d-md-none m-3 rounded-circle fab"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#tocOffcanvas"
+        >
+            <i class="bi bi-list-ul"></i>
+        </button>
+        <div class="offcanvas offcanvas-bottom h-auto" tabindex="-1" id="tocOffcanvas">
+            <div class="offcanvas-header fs-3 fw-semibold">
+                <h5>On this Page</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+
+            <div class="offcanvas-body fs-5 fw-light">
+                <a href="#overview" class="nav-link">Overview</a>
+                <a href="#experience" class="nav-link">Experience</a>
+
+                {% for experience in experiences %}
+                <a href="#{{ experience.id }}" class="nav-link ms-3 my-1">
+                {{ experience.label }}
+                </a>
+                {% endfor %}
+
+                <a href="#skills" class="nav-link">Skills</a>
+
+                {% for skill_name, skill_item in skills.items() %}
+                <a href="#{{ skill_name | lower | replace(' ', '-') }}" class="nav-link ms-3 my-1">
+                {{ skill_name }}
+                </a>
+                {% endfor %}
+            </div>
+        </div>
         <div class="col-12 col-md-3">
-            <nav id="toc" class="h-100 flex-column align-items-stretch ps-4 border-start d-none d-md-block">
+            <nav class="d-none d-md-block h-100 flex-column align-items-stretch ps-4 border-start">
                 <div class="position-sticky top-0 pt-3 fs-5 fw-light">
                     <h6 class="fs-4">On this Page</h6>
                     <a href="#overview" class="nav-link">Overview</a>
                     <a href="#experience" class="nav-link">Experience</a>
+
                     {% for experience in experiences %}
                     <a href="#{{ experience.id }}" class="nav-link ms-3 my-1">
                         {{ experience.label }}
                     </a>
                     {% endfor %}
+
                     <a href="#skills" class="nav-link">Skills</a>
+
                     {% for skill_name, skill_item in skills.items() %}
                     <a href="#{{ skill_name | lower | replace(' ', '-') }}" class="nav-link ms-3 my-1">
                         {{ skill_name }}
                     </a>
-                    {% endfor %}
+                {% endfor %}
                 </div>
             </nav>          
         </div>
