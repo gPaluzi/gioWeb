@@ -100,3 +100,16 @@
         height: 12px;
     }
 }
+
+/* Modal style */
+
+.project-modal h2 {
+    padding-bottom: none;
+    font-weight: 500;
+}
+
+.project-modal p,
+.project-modal li {
+    font-size: larger;
+    font-weight: 300;
+}

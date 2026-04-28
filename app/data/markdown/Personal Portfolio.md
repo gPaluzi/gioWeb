@@ -21,9 +21,6 @@ links:
 start_date: 2026-01-03
 ---
 
-## Personal Portfolio
-Flask-based platform as a container of my workflow.
-
 ## Overview
 The project originated from a need for centralized 'single-source' for my personal identity, a platform that reflecting my journey as a whole. Functioning as a live 'patch log' to document my growth. 
 

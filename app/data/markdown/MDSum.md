@@ -18,8 +18,5 @@ links:
 start_date: 2025-04-02
 ---
 
-# MDsum
-Python utility to summarize camera trap metadata
-
 ## Overview
 Developed to solve a bottleneck issue in wildlife field monitoring. This Python-based utility automates the extraction and organization of metadata from large-scale camera trap surveys. What was once a manual, time-consuming process is now streamlied that converts thousands of raw images into a structured metadata datasets.

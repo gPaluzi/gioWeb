@@ -4,20 +4,22 @@ Flask based web app, a simple exercise for me to learn web development and upgra
 
 Recently deployed on [Render.com](https://gioweb.onrender.com/).
 
+## How it works
+Data -> seeded to DB -> Flask route -> Jinja Templates
+
 ## Future works
 ### Content
 - AboutMe: Insert all experiences
 - AboutMe: Add more skills
 
 ### Frontends
-- Create html templates for portfolio modal
 - Create personalities pagination in aboutme
 
 
 ### Backends
 - Add error handling in seed.py
 - Add advanced filtering in aboutme sections
+- Add small api route to learn JS fetching
 - Add portofolios data model, *make sure have FK to skills table*
-- Modify seed.py to handle md file in portfolio content
 - Sanitize the html from markdown before seeded to db
 - Use flask blueprints if things start messy
