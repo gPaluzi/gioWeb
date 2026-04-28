@@ -1,5 +1,6 @@
 import os
 from flask import Flask, render_template, request
+import markdown
 from .utils.content import *
 from .database import init_db
 
@@ -36,6 +37,9 @@ def create_app():
     @app.route("/portfolio")
     def portfolio():
         projects = get_projects()
+
+        for project in projects:
+            project.html_content = markdown.markdown(project.content)
 
         return render_template('portfolio.html', projects=projects)
     
