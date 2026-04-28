@@ -2,15 +2,24 @@
 title: Personal Portfolio
 slug: personal-portfolio
 tagline: Flask-based platform as a container of my works.
-thumbnail_url: https://cdn.pixabay.com/photo/2018/02/22/18/21/laptop-3173613_1280.png
-thumbnail_alt: computer
-hero_url: https://cdn.pixabay.com/photo/2015/10/27/14/40/programming-1009134_1280.jpg
-hero_alt: terminal-hero
+
+thumbnail:
+  url: https://cdn.pixabay.com/photo/2018/02/22/18/21/laptop-3173613_1280.png
+  alt: computer
+
+hero:
+  url: https://cdn.pixabay.com/photo/2015/10/27/14/40/programming-1009134_1280.jpg
+  alt: terminal-hero
+
+links:
+  - label: Live
+    url: https://gioweb.onrender.com/
+
+  - label: GitHub
+    url: https://github.com/gPaluzi/gioWeb
+
 start_date: 2026-01-03
 ---
-
-## Personal Portfolio
-Flask-based platform as a container of my workflow.
 
 ## Overview
 The project originated from a need for centralized 'single-source' for my personal identity, a platform that reflecting my journey as a whole. Functioning as a live 'patch log' to document my growth. 

@@ -8,54 +8,34 @@
             <p class="lead fs-5">
                 Centralized container for my works in GIS and app development. It serves as a digital album documenting how i face environmental data or develop creative coding solutions.
             </p>
-            <strong>I'm working with this page. Come back soon~</strong>
         </div>
     </div>
 </section>
 <div class="container">
     <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-5 p-5 align-items-stretch">
+        {% for project in projects %}
         <div class="col">
             <div class="card shadow hover-lift h-100 d-flex flex-column">
                 <div class="ratio ratio-4x3">
                     <img 
-                    src="https://cdn.pixabay.com/photo/2019/03/16/07/27/camera-4058597_1280.jpg" 
-                    alt="code" 
-                    class="card-img-top placeholder-glow object-fit-cover"
-                    />
+                    src="{{ project.thumbnail_url }}" 
+                    alt="{{ project.thumbnail_alt }}" 
+                    class="card-img-top placeholder-glow object-fit-cover">
                 </div>
                 <div class="card-body d-flex flex-column">
-                    <h2 class="card-title">MDSum</h2>
-                    <a 
-                    href="#" 
+                    <h2 class="card-title">
+                        {{ project.title }}
+                    </h2>
+                    <a href="#" 
                     class="card-text stretched-link text-decoration-none text-reset project-link"
                     data-bs-toggle="modal"
-                    data-bs-target="#exampleModal1">
-                        Python utility to summarize camera trap metadata.
+                    data-bs-target="#{{ project.slug }}">
+                        {{ project.tagline }}
                     </a>
                 </div>
             </div>
         </div>
-        <div class="col">
-            <div class="card shadow hover-lift h-100 d-flex flex-column">
-                <div class="ratio ratio-4x3">
-                    <img 
-                    src="https://cdn.pixabay.com/photo/2018/02/22/18/21/laptop-3173613_1280.png" 
-                    alt="code" 
-                    class="card-img-top placeholder-glow object-fit-cover"
-                    />
-                </div>
-                <div class="card-body d-flex flex-column">
-                    <h2 class="card-title">Personal Portofolio</h2>
-                    <a 
-                    href="#" 
-                    class="card-text stretched-link text-decoration-none text-reset project-link"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal2">
-                        Flask-based platform as a container of my works.
-                    </a>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
 {% include 'project_modal.html' %}

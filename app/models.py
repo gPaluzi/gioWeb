@@ -1,5 +1,5 @@
 from datetime import date, datetime
-from sqlalchemy import Column, Integer, String, Text, Date, ForeignKey
+from sqlalchemy import Column, Integer, String, Text, JSON, Date, ForeignKey
 from sqlalchemy.orm import relationship
 from .database import Base
 
@@ -132,6 +132,7 @@ class Project(Base):
     hero_url = Column(String)
     hero_alt = Column(String)
     content = Column(Text)
+    links = Column(JSON)
     start_date = Column(Date)
 
     def __init__( self, 
@@ -143,7 +144,8 @@ class Project(Base):
             start_date: date,
             hero_url=None,
             hero_alt=None,
-            content:str=None
+            content:str=None,
+            links:dict=None
             ):
         self.title = title
         self.slug = slug
@@ -154,6 +156,7 @@ class Project(Base):
         self.hero_alt = hero_alt
         self.start_date = self.validate_date(start_date)
         self.content = content
+        self.links = links
 
     @classmethod
     def validate_date(cls, value: str | date | datetime)-> date:
