@@ -17,7 +17,20 @@
                     class="img-fluid w-100 object-fit-cover">
                 </div>
                 {% endif %}
-                <div class="p-2 py-md-4"></div>
+                <div class="p-2 py-md-4">
+                    <div class="d-flex flex-column flex-md-row justify-content-between align-item-center">
+                        <p class="lead fw-normal fs-4">
+                            {{ project.tagline }}
+                        </p>
+                        {% if project.links %}
+                        <div class="mb-2 mb-md-4">
+                            {% for link in project.links %}
+                            <a href="{{ link.url }}" class="btn btn-dark" role="button">{{ link.label }}</a>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
