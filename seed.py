@@ -1,11 +1,13 @@
-from pathlib import Path
 import json
+from pathlib import Path
+from typing import Dict
+
 from app import create_app, database
 from app.database import Base
 from app.utils.markdown_parser import parse_md
 from app.models import Experience, SkillCategory, Skill, Project
 
-def seed_markdown():
+def seed_markdown() -> None:
     session = database.db_session
 
     BASE_DIR = Path(__file__).resolve().parent
@@ -18,7 +20,6 @@ def seed_markdown():
         meta = data['metadata']
         content = data['content']
 
-        
         project = Project(
             title=meta['title'],
             slug=meta['slug'],
@@ -38,11 +39,10 @@ def seed_markdown():
             continue
 
         session.add(project)
-        
 
     session.commit()
 
-def seed_json():
+def seed_json() -> None:
     session = database.db_session
 
     BASE_DIR = Path(__file__).resolve().parent
@@ -50,7 +50,7 @@ def seed_json():
     with open(json_path) as f:
         data = json.load(f)
 
-    categories = {}
+    categories: Dict[str, SkillCategory] = {}
     for skill_category_data in data.get("skill_category", []):
         category = SkillCategory(skill_category_data["name"])
         session.add(category)
@@ -75,12 +75,12 @@ def seed_json():
 
     session.commit()
 
-def reset_db():
+def reset_db() -> None:
     engine = database.engine
     Base.metadata.drop_all(bind=engine)
     Base.metadata.create_all(bind=engine)
 
-def seed(reset: bool=False):
+def seed(reset: bool=False) -> None:
     session = database.db_session
 
     if reset:

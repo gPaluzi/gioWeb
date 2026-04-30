@@ -3,7 +3,7 @@ import markdown
 from flask import render_template, request
 from .utils.content import get_experience, generate_experience, generate_skills, get_projects
 
-def init_routes(app):
+def init_routes(app) -> None:
     @app.route('/')
     def index():
         return render_template('home.html')
