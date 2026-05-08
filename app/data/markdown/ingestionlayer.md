@@ -5,11 +5,11 @@ tagline: Python utility for scalable field data ingestion.
 
 thumbnail:
   url: https://cdn.pixabay.com/photo/2018/04/16/11/36/pile-3324375_1280.jpg
-  alt: camera-trap
+  alt: pile-of-paper
 
 hero:
   url: https://cdn.pixabay.com/photo/2020/03/17/17/09/engineer-4941168_1280.jpg
-  alt: code-hero
+  alt: explaining-workflow
 
 links:
 
