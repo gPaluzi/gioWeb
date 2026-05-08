@@ -1,8 +1,7 @@
 import os
-from flask import Flask, render_template, request
-import markdown
-from .utils.content import *
+from flask import Flask
 from .database import init_db
+from .routes import init_routes
 
 def create_app():
     app = Flask(__name__)
@@ -15,32 +14,6 @@ def create_app():
         app.config.from_object('config.DevelopmentConfig')
 
     init_db(app)
+    init_routes(app)    
 
-    @app.route('/')
-    def index():
-        return render_template('home.html')
-    
-    @app.route('/about')
-    def about():
-        filter_type = request.args.get('exp_filter', 'all')
-
-        experiences = generate_experience(get_experience(filter_type))
-        skills = generate_skills()
-
-        return render_template(
-            'about.html',
-            experiences = experiences, 
-            skills = skills,
-            active_filter = filter_type
-        )
-    
-    @app.route("/portfolio")
-    def portfolio():
-        projects = get_projects()
-
-        for project in projects:
-            project.html_content = markdown.markdown(project.content)
-
-        return render_template('portfolio.html', projects=projects)
-    
     return app

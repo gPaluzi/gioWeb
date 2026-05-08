@@ -15,11 +15,14 @@ Data -> seeded to DB -> Flask route -> Jinja Templates
 ### Frontends
 - Create personalities pagination in aboutme
 
-
 ### Backends
 - Add error handling in seed.py
+- Move data validations to services/utils instead in models
 - Add advanced filtering in aboutme sections
 - Add small api route to learn JS fetching
 - Add portofolios data model, *make sure have FK to skills table*
 - Sanitize the html from markdown before seeded to db
 - Use flask blueprints if things start messy
+
+### Others
+- Check typing for easier development

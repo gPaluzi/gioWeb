@@ -1,7 +1,11 @@
-from datetime import date
-from sqlalchemy import select
 from collections import defaultdict
+from datetime import date
+from typing import List
+
+from sqlalchemy import select
+
 from .markdown_parser import parse_md
+from ..models import Project
 
 EXPERIENCE_META = {
     'career':{
@@ -31,7 +35,7 @@ EXPERIENCE_META = {
     }
 }
 
-def get_experience(filter_type)-> defaultdict:
+def get_experience(filter_type: str) -> defaultdict:
     from ..database import db_session
     from ..models import Experience
 
@@ -53,7 +57,7 @@ def get_experience(filter_type)-> defaultdict:
 
     return grouped
 
-def get_period_format(start_date:date, end_date:date)-> str:
+def get_period_format(start_date:date, end_date:date) -> str:
     if not end_date:
         end_date = date.today()
 
@@ -69,7 +73,7 @@ def get_period_format(start_date:date, end_date:date)-> str:
         return 'month_interval'
     
     
-def generate_experience(exp_data)-> list:
+def generate_experience(exp_data) -> list:
     sections = []
 
     for section, meta in EXPERIENCE_META.items():
@@ -98,7 +102,7 @@ def generate_experience(exp_data)-> list:
 
     return sections
 
-def generate_skills()->defaultdict:
+def generate_skills() -> defaultdict:
     from ..database import db_session
     from ..models import Skill
     
@@ -111,7 +115,7 @@ def generate_skills()->defaultdict:
 
     return grouped
 
-def get_projects():
+def get_projects()-> List[Project]:
     from ..database import db_session
     from ..models import Project
 

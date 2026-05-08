@@ -1,6 +1,9 @@
 from datetime import date, datetime
+from typing import Dict, Any
+
 from sqlalchemy import Column, Integer, String, Text, JSON, Date, ForeignKey
 from sqlalchemy.orm import relationship
+
 from .database import Base
 
 class Experience(Base):
@@ -30,7 +33,7 @@ class Experience(Base):
         organization: str | None = None,
         end_date: str | date | None = None,
         description: str | None = None
-    ):
+    ) -> None:
         self.category = self.validate_category(category)
         self.start_date = self.validate_date(start_date, f'{name} start date')
         self.end_date = self.validate_date(end_date, f'{name} end date') if end_date else None
@@ -62,7 +65,7 @@ class Experience(Base):
         else:
             raise TypeError(f'{experience_name} must be a str or datetime.date, got {type(value).__name__}')
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         start = self.start_date.strftime('%d %m %Y')
         end = self.end_date.strftime('%d %m %Y') if self.end_date else 'Present'
         return f'<Experienced {self.name} from {start} to {end}>'
@@ -97,8 +100,7 @@ class Skill(Base):
     confidence = Column(Integer, nullable=False)
     summary = Column(String)
 
-
-    def __init__(self, name: str, level: str, confidence: int, summary: str, category):
+    def __init__(self, name: str, level: str, confidence: int, summary: str | None, category:SkillCategory) -> None:
         self.name = name
         self.level = self.validate_level(level)
         self.confidence = self.validate_confidence(confidence)
@@ -106,18 +108,18 @@ class Skill(Base):
         self.category = category
 
     @classmethod
-    def validate_level(cls, level: str)-> str:
+    def validate_level(cls, level: str) -> str:
         if level.strip().lower() not in cls.VALID_LEVEL:
             raise ValueError(f'Invalid level, got {level}')
         return level.strip().lower()
     
     @classmethod
-    def validate_confidence(cls, value:int)-> int:
+    def validate_confidence(cls, value: int) -> int:
         if not 0 <= value <= 100:
             raise ValueError(f'confidence value is out of range, got {value}')
         return value
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f'<{self.name}> at {self.level} level'
     
 class Project(Base):
@@ -142,11 +144,11 @@ class Project(Base):
             thumbnail_url,
             thumbnail_alt,
             start_date: date,
-            hero_url=None,
-            hero_alt=None,
-            content:str=None,
-            links:dict=None
-            ):
+            hero_url: str | None = None,
+            hero_alt: str | None = None,
+            content: str | None = None,
+            links:dict | None =None
+            ) -> None:
         self.title = title
         self.slug = slug
         self.tagline = tagline
@@ -159,7 +161,7 @@ class Project(Base):
         self.links = links
 
     @classmethod
-    def validate_date(cls, value: str | date | datetime)-> date:
+    def validate_date(cls, value: str | date | datetime) -> date:
         if isinstance(value, str):
             return datetime.strptime(value, '%Y-%m-%d').date()
 
@@ -171,5 +173,5 @@ class Project(Base):
         
         raise TypeError(f'start_date must be a str, datetime.datetime, or datetime.date, got {type(value).__name__}')
 
-    def __repr__(self):
+    def __repr__(self) ->str:
         return f'<Title: {self.title}>'
