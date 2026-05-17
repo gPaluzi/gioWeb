@@ -1,12 +1,20 @@
 {
     "experience": [
         {
+            "name": "Post-Program Avifauna Monitoring",
+            "category": "Volunteer",
+            "organization": "Mangrove Jakarta",
+            "start_date": "2026-05-16",
+            "end_date": "2026-05-17",
+            "description": "Contributed a follow-up study monitoring for avifauna and herpetofauna diversity, benchmarking results against baseline survey data collected two years prior. Evaluated the localized ecological impact of a riverine trash barrier intervention on species return and habitat quality."
+        },
+        {
             "name": "GPS Collar Trainer",
             "category": "Other",
             "organization": "SINTAS Indonesia",
             "start_date": "2026-04-17",
             "end_date": "2026-04-17",
-            "description": "Facilitated one-day technical introduction to GPS Collar deployment in Meru Betiri National Park. Deliver key-concept of GPS Collar mechanism and how to deploy it safely to terrestrial animals. Moreover, demonstrating gps collar testing protocol and retrieval methods.s"
+            "description": "Facilitated one-day technical introduction to GPS Collar deployment in Meru Betiri National Park. Deliver key-concept of GPS Collar mechanism and how to deploy it safely to terrestrial animals. Moreover, demonstrating gps collar testing protocol and retrieval methods."
         },
         {
             "name": "GPS Collar Deployment Supervisor",
