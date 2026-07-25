@@ -1,6 +1,22 @@
 {
     "experience": [
         {
+            "name": "Population Viability Analysis with Vortex",
+            "category": "Certification",
+            "organization": "Conservation Planning Specialist Group",
+            "start_date": "2026-07-20",
+            "end_date": "2026-07-24",
+            "description": "Completed five days intensive training on Population Viability Analysis (PVA) utilizing Vortex simulation software. Focused on modeling stochastic demographic growth, genetic variation, and extintion risks over time to generate predictive datasets that guide data-driven management decisions for threatened species conservation."
+        },
+        {
+            "name": "Reassessment of IUCN Red-List Status for Threatened Plant",
+            "category": "Other",
+            "organization": "SINTAS Indonesia",
+            "start_date": "2026-06-18",
+            "end_date": "2026-06-18",
+            "description": "Engaged in collaborative conservation assessment for Threatened Plant collaboration with BRIN, national park authorities, and academic institutions. Assisted in synthesizing field survey data and spatial metric to support extinction risk evaluations."
+        },
+        {
             "name": "Post-Program Avifauna Monitoring",
             "category": "Volunteer",
             "organization": "Mangrove Jakarta",
