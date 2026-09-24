@@ -1,6 +1,14 @@
 {
     "experience": [
         {
+            "name": "GIS Introduction Trainer",
+            "category": "Other",
+            "organization": "SINTAS Indonesia",
+            "start_date": "2026-09-18",
+            "end_date": "2026-09-20",
+            "description": "Attend a training series for SINTAS Indonesia colleague from local communities and NGO's on the fundamentals of GIS. The training emphasized the base concept of GIS, including projections, spatial data types, and map design principles. I also provided hands-on exercises to ensure participanst could apply the concepts in practical scenarios, enhancing their familiarity with GIS tools and workflows for conservation practices."
+        },
+        {
             "name": "Population Viability Analysis with Vortex",
             "category": "Certification",
             "organization": "Conservation Planning Specialist Group",
