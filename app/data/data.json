@@ -1,6 +1,14 @@
 {
     "experience": [
         {
+            "name": "Computer Science Major",
+            "category": "Education",
+            "organization": "Muhammadiyah Cyber University",
+            "start_date": "2026-08-01",
+            "end_date": null,
+            "description": "Formally initiated academic training in Computer Science. Transitioning from self-taught programming, automation, and spatial data pipeline experience into rigorous computer science fundamentals, focusing on data structures, backend engineering, and algorithmic problem-solving. This academic pursuit aims to solidify my technical foundation for advanced geospatial and data-driven conservation applications."
+        },
+        {
             "name": "GIS Introduction Trainer",
             "category": "Other",
             "organization": "SINTAS Indonesia",

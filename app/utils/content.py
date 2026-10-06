@@ -47,7 +47,7 @@ def get_experience(filter_type: str) -> defaultdict:
         cutoff = date(date_now.year - 5, date_now.month, date_now.day)
         query = query.where(Experience.start_date >= cutoff)
 
-    query = query.order_by(Experience.start_date.desc())
+    query = query.order_by(Experience.start_date.asc())
     result = db_session.execute(query).scalars()
 
     grouped = defaultdict(list)
